@@ -183,6 +183,64 @@
     .footer-social a:hover{color:var(--uvfa-orange);}
     .footer-contact{color:var(--uvfa-beige); font-weight:700; font-size:1.19rem; text-decoration:none; cursor:pointer; border-bottom:1px dotted var(--uvfa-beige); transition:color 0.2s;}
     .footer-note{font-size:1.13rem; color:#68422d; opacity:.85; margin-top:1.2em;}
+{
+  /* Adjust this breakpoint as you like */
+@media (max-width: 768px) {
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* logo left, button right */
+  }
+
+  .menu-toggle {
+    display: inline-block;  /* show button on mobile */
+    background-color: #f4e7d9;  /* UVFA beige */
+    color: #4b2a16;             /* UVFA dark text */
+    border: 1px solid #4b2a16;
+    padding: 6px 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .main-nav {
+    display: none;              /* hide links until opened */
+    flex-direction: column;
+    gap: 10px;
+    background-color: #d85528 ;  /* UVFA orange background for dropdown */
+    padding: 10px 20px;
+    margin-top: 10px;
+  }
+
+  .main-nav.open {
+    display: flex;              /* show when JS toggles .open */
+  }
+
+  .main-nav a {
+    color: #4b2a16;             /* readable on orange */
+  }
+}
+
+  /* Optional: stack header content nicely on mobile */
+  .site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo left, nav/menu right */
+  padding: 10px 20px;
+}
+
+/* Make the nav itself a row on desktop */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Hide the Menu button on desktop */
+.menu-toggle {
+  display: none;
+}
+}
   </style>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
