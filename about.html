@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="canonical" href="https://www.unitedvoicesforanimals.org/">
+  <title>About Us – UVFA</title>
+<!-- SEO DESCRIPTION -->
+  <meta name="description" content="Learn about United Voices for Animals—the story, mission, vision and dedicated team behind our organization.">
+  
+  <!-- KEYWORDS (optional, minor impact) -->
+  <meta name="keywords" content="UVFA, United Voices for Animals, animal welfare, youth empowerment, kindness curriculum, get involved, initiatives, non profit, youth led non profit">
+  
+  <!-- Canonical URL (optional but recommended for clarity to Google) -->
+  <link rel="canonical" href="https://www.unitedvoicesforanimals.org/">
+  
+  <!-- Social Preview (Open Graph for sharing) -->
+  <meta property="og:title" content="United Voices for Animals – UVFA">
+  <meta property="og:description" content="Empowering youth to make a positive impact for animals. Get involved, learn more, and join our initiatives.">
+  <meta property="og:image" content="https://www.unitedvoicesforanimals.org/images/uvfa_logo_beige.png"> <!-- use actual logo path -->
+  <meta property="og:url" content="https://www.unitedvoicesforanimals.org/">
+  <meta property="og:type" content="website">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    :root {
+      --uvfa-orange: #d85528;
+      --uvfa-coral: #e67a62;
+      --uvfa-beige: #dfa493;
+      --uvfa-light: #fad6c6;
+      --uvfa-white: #fdf9ee;
+    }
+    body {
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: var(--uvfa-white);
+      color: #2e1709;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--uvfa-orange);
+      padding: 0.7rem 1.2rem;
+      z-index: 11;
+      position: relative;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+    }
+    .logo-img {
+      width: 52px; height: 52px; border-radius: 12px; object-fit: cover; background: var(--uvfa-light);
+    }
+    .logo-title {
+      font-size: 2.3rem; font-weight: 700; color: var(--uvfa-white); letter-spacing: 1.5px; text-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+    nav { display: flex; gap: 1.8rem; align-items: center; }
+    nav a, .dropdown-link {
+      color: var(--uvfa-white);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.19rem;
+      padding-bottom: 3px;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s;
+      position: relative;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    nav a:hover, .dropdown-link:hover { color: var(--uvfa-light); border-bottom: 2px solid var(--uvfa-beige);}
+    .dropdown { position: relative; }
+    .dropdown-link::after {
+      content: " ▼";
+      font-size: 1rem;
+      font-weight: 400;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: calc(100% + 7px);
+      left: 0;
+      background: var(--uvfa-light);
+      min-width: 190px;
+      box-shadow: 0 4px 18px rgba(216,85,40,0.07);
+      z-index: 99;
+      border-radius: 0 0 10px 10px;
+      overflow: hidden;
+    }
+    .dropdown-content a {
+      color: var(--uvfa-orange);
+      padding: 0.85em 1.2em;
+      text-decoration: none;
+      display: block;
+      font-size: 1.09rem;
+      border-bottom: 1px solid #efd1be;
+      background: var(--uvfa-light);
+    }
+    .dropdown-content a:hover { background: var(--uvfa-beige); color: var(--uvfa-white);}
+    .dropdown.active .dropdown-content { display: block; }
+    @media (max-width: 900px) {
+      .nav { flex-wrap: wrap; }
+      nav { gap: 1rem; }
+    }
+    @media (max-width: 700px) {
+      header { flex-direction: column; align-items: flex-start;}
+      nav { margin-top: 0.8em; flex-wrap: wrap;}
+      .logo-title { font-size: 1.5rem;}
+      .logo-img { width: 38px; height: 38px;}
+    }
+    .hero-bg {
+      width: 100%;
+      min-height: 350px;
+      background: url('images/pet.jpg') center/cover no-repeat;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0;
+      text-align: center;
+      z-index: 1;
+    }
+    .hero-overlay {
+      background: rgba(216,85,40, 0.83);
+      padding: 4.3rem 1rem 4.2rem 1rem;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .mission-big {
+      font-size: 3.3rem;
+      color: var(--uvfa-white);
+      font-weight: bold;
+      margin-bottom: 0.87em;
+      margin-top: 0;
+      letter-spacing: 0.04em;
+    }
+    .mission-text {
+      font-size: 1.45rem;
+      color: var(--uvfa-white);
+      font-weight: 400;
+      margin-bottom: 0;
+      margin-top: 0.5em;
+      text-align: center;
+      letter-spacing: 0.01em;
+      max-width: 760px;
+      line-height: 1.32;
+    }
+    .story-block {
+      background: var(--uvfa-orange);
+      color: var(--uvfa-white);
+      padding: 4rem 1.5rem 4rem 1.5rem;
+      max-width: 1200px;
+      margin: 5rem auto 2.5rem auto;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 2.8em;
+      flex-wrap: wrap;
+    }
+    .story-img {
+      width: 320px; height: 320px; object-fit: cover; border-radius: 18px; background: var(--uvfa-light);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+      margin-right:1.1em;
+    }
+    .story-content {
+      flex: 1; text-align: left;
+    }
+    .story-title {
+      font-size: 2.7rem; font-weight: 900; color: var(--uvfa-white); margin-bottom: 1.25em; margin-top:0.6em;
+      letter-spacing: 0.02em;
+    }
+    .story-text {
+      font-size: 1.28rem; color: var(--uvfa-white); margin-bottom: 0.12em; font-weight: 500; line-height:1.66;
+    }
+    .values-block {
+      background: var(--uvfa-white);
+      padding: 4rem 1.2rem 4rem 1.2rem;
+      max-width: 900px;
+      margin: 4rem auto 4rem auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 20px rgba(216,85,40,0.04);
+    }
+    .values-title {
+      text-align: center;
+      font-size: 2.7rem;
+      font-weight: 900;
+      color: var(--uvfa-orange);
+      margin-bottom: 1.35em;
+      margin-top:0;
+    }
+    .values-text {
+      font-size: 1.26rem;
+      color: #432114;
+      text-align: center;
+      font-weight: 500;
+      line-height: 1.7;
+      margin-bottom:0;
+      max-width:750px;
+      margin:0 auto;
+    }
+    .board-section {
+      max-width: 1100px;
+      margin: 6rem auto 4rem auto;
+      padding-bottom: 2.8rem;
+    }
+    .board-title {
+      text-align: center;
+      font-size: 2.95rem;
+      font-weight: 900;
+      color: var(--uvfa-orange);
+      margin-bottom: 3.4rem;
+      letter-spacing: 0.02em;
+    }
+    .board-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3.2em;
+      justify-content: center;
+      align-items: stretch;
+    }
+    .member-card {
+      flex: 1 1 220px;
+      max-width: 220px;
+      background: var(--uvfa-beige);
+      border-radius: 22px;
+      padding: 1.7em 1.1em;
+      box-shadow: 0 4px 14px rgba(216,85,40,0.10);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width:195px;
+    }
+    .member-photo {
+      width: 130px;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 12px;
+      background: var(--uvfa-light);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      margin-bottom: 1em;
+    }
+    .member-name {
+      font-size: 1.28rem;
+      font-weight: 900;
+      color: var(--uvfa-orange);
+      margin-bottom: 0.4em;
+      text-align: center;
+    }
+    .member-role {
+      font-size: 1.12rem;
+      color: var(--uvfa-coral);
+      margin-bottom: 0.29em;
+      font-weight: 600;
+      text-align: center;
+    }
+    .member-bio {
+      font-size: 0.99rem;
+      color: #432114;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom:.7em;
+    }
+    @media (max-width:1200px){
+      .story-block{flex-direction:column;align-items:flex-start;}
+      .story-img { margin-right:0; margin-bottom:2em;}
+    }
+    @media (max-width:950px){
+      .board-grid{gap:1.8em;}
+    }
+    @media (max-width:700px){
+      .board-title{font-size:2.1rem;}
+      .member-card{max-width:95vw;}
+      .story-title,.values-title{font-size:1.8rem;}
+      .mission-big{font-size:1.3rem;}
+      .mission-text{font-size:1rem;}
+    }
+    footer {
+      background: var(--uvfa-light); color: var(--uvfa-orange);
+      padding: 2.2rem 0 1.3rem 0; text-align: center;
+      font-size: 1.18rem; margin-top: 4em;
+    }
+    .footer-social {margin: 1.2em 0 1em 0; display: flex; justify-content: center; gap: 2.2rem;}
+    .footer-social a {
+      font-size: 2.5rem;
+      color: var(--uvfa-coral); text-decoration: none; transition: color 0.2s; display: inline-block; vertical-align: middle;
+    }
+    .footer-social a:hover {color: var(--uvfa-orange);}
+    .footer-contact {color: var(--uvfa-beige); font-weight: 700; font-size: 1.19rem; text-decoration: none; cursor: pointer; border-bottom: 1px dotted var(--uvfa-beige); transition: color 0.2s;}
+    .footer-note {font-size: 1.13rem; color: #68422d; opacity: .85; margin-top: 1.2em;}
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid #333;
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+/* Adjust this breakpoint as you like */
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;          /* hide links by default on phone */
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff;
+    padding: 10px 0;
+  }
+
+  .main-nav.open {
+    display: flex;          /* show when the JS adds .open */
+  }
+
+  .menu-toggle {
+    display: inline-block;  /* show the Menu button on phone */
+  }
+
+  /* Optional: stack header content nicely on mobile */
+  .site-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+  </style>
+  <script>
+    // Dropdown open/close logic (works for click and touch!)
+    document.addEventListener('DOMContentLoaded', function () {
+      var dropdown = document.querySelector('.dropdown');
+      var link = document.querySelector('.dropdown-link');
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        dropdown.classList.toggle('active');
+        // Close when clicking anywhere else
+        document.addEventListener('click', function handler(event) {
+          if (!dropdown.contains(event.target)) {
+            dropdown.classList.remove('active');
+            document.removeEventListener('click', handler);
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <header class="site-header">
+  <div class="header-left">
+    <img src="images/uvfa_logo_beige.png" class="logo-img" alt="UVFA Logo">
+    <span class="logo-title">UVFA</span>
+  </div>
+
+  <!-- Mobile menu button -->
+  <button class="menu-toggle" aria-label="Toggle navigation">
+    ☰ Menu
+  </button>
+
+  <!-- Single nav used for both desktop and mobile -->
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <div class="dropdown">
+      <button class="dropdown-link">About Us</button>
+      <div class="dropdown-content">
+        <a href="about.html#story">Our Story</a>
+        <a href="about.html#board">Our Board</a>
+      </div>
+    </div>
+    <a href="initiatives.html">Our Initiatives</a>
+    <a href="blog.html">Tales of Tails</a>
+    <a href="involved.html">Get Involved</a>
+    <a href="donate.html">Donate</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+  <!-- HERO Mission Block -->
+  <section class="hero-bg" id="mission">
+    <div class="hero-overlay">
+      <div class="mission-big">Our Mission</div>
+      <div class="mission-text" style="font-weight:400;font-size:1.45rem;">
+        UVFA (United Voices for Animals) is a 501(c)(3) youth-led non-profit organization dedicated to empowering youth to create change for animals in need. Our mission is to help stray animals and shelters that protect them through volunteering, community engagement, fundraising and raising awareness on pressing issues in animal welfare.
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Story Block -->
+  <section class="story-block" id="story">
+    <img src="images/story.jpg" class="story-img" alt="Founders or Team">
+    <div class="story-content">
+      <div class="story-title">Our Story</div>
+      <div class="story-text">
+        UVFA began with a belief that every animal deserves care, kindness and a loving home. Founded in 2025 by a student turning compassion into action, it was planned to be an initiative to help local shelters. What began as one city’s project quickly grew into a nationwide student network. Today, UVFA brings students from different schools and states, to organize creative projects, from shelter partnerships to awareness campaigns. <br><br>
+        What makes UVFA special is that it is entirely youth led. Every branch has the creative freedom to design unique projects, reflecting the needs of their community, whether it’s volunteer work or a holiday event.
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Values and Goals Block -->
+  <section class="values-block" id="values">
+    <div class="values-title">Our Values & Goals</div>
+    <div class="values-text">
+      Here at UVFA, our values are rooted in compassion, community, and creativity. We believe that every young person in the world has the opportunity to make a difference for animals in need. Each UVFA branch is built on collaboration and communication – connecting volunteers, shelters, and local communities to create real impact. We value inclusion at every level: regardless of your background, geographic location, or whether you own a pet or not, there is always a way to help, share, and advocate for animals.<br><br>
+      We aim to create a world where every animal is loved, cared for, and valued. Our goal is to raise awareness on responsible pet care, supporting animals and shelters, and inspiring others through creative campaigns and educational outreach.
+    </div>
+  </section>
+
+  <!-- Our Board Section -->
+  <section class="board-section" id="board">
+    <div class="board-title">Meet Our Executive Team</div>
+    <div class="board-grid">
+      <!-- Example Member Cards: swap for your team -->
+      <div class="member-card">
+        <img src="images/founder.jpg" class="member-photo" alt="Board Member 1">
+        <div class="member-name">Dinay Taalaibekova</div>
+        <div class="member-role">Founder</div>
+        <div class="member-bio">Houston, TX</div>
+      </div>
+      <div class="member-card">
+        <img src="images/parker.jpeg" class="member-photo" alt="Board Member 2">
+        <div class="member-name">Parker Barton</div>
+        <div class="member-role">Outreach Director; City Lead</div>
+        <div class="member-bio">Memphis, TN</div>
+      </div>
+      <div class="member-card">
+        <img src="images/kayla.JPG" class="member-photo" alt="Board Member 3">
+        <div class="member-name">Kayla Bucher</div>
+        <div class="member-role">Social Media Coordinator; City Lead</div>
+        <div class="member-bio">Pittsburgh, PA</div>
+      </div>
+      <div class="member-card">
+        <img src="images/prakriti.jpg" class="member-photo" alt="Board Member 4">
+        <div class="member-name">Prakriti Tamang</div>
+        <div class="member-role">Social Media Coordinator </div>
+        <div class="member-bio">Pittsburgh, PA</div>
+      </div>
+      <div class="member-card">
+        <img src="images/elyse.jpeg" class="member-photo" alt="Board Member 5">
+        <div class="member-name">Elyse Farqharson</div>
+        <div class="member-role">Volunteer Coordinator</div>
+        <div class="member-bio">Jacksonville, FL</div>
+      </div>
+      <div class="member-card">
+        <img src="https://images.unsplash.com/photo-1508214751196-bc4f7d00411f?auto=format&fit=crop&w=300&q=80" class="member-photo" alt="Board Member 6">
+        <div class="member-name">Jalyce Segovia</div>
+        <div class="member-role">Outreach Director</div>
+        <div class="member-bio">Port Washington, NY</div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div>
+      <a href="mailto:uvfa.org@gmail.com" class="footer-contact">uvfa.org@gmail.com</a>
+      <div class="footer-social">
+        <a href="https://www.tiktok.com/@uvfa.org?_t=ZP-8zBRIlVw0n0&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/uvfa_org/profilecard/?igsh=Zzl1cHRxMmppaWp4" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-note">
+      United Voices for Animals is a registered 501(c)(3) non profit under Hack Club Bank
+    </div>
+  </footer>
+<script>
+  const menuBtn = document.querySelector('.menu-toggle');
+  const mainNav = document.querySelector('.main-nav');
+
+  menuBtn.addEventListener('click', () => {
+    mainNav.classList.toggle('open');
+  });
+</script>
+</body>
+</html>

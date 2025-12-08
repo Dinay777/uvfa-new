@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+  <title>UVFA – United Voices for Animals</title>
+
+ <!-- SEO DESCRIPTION -->
+  <meta name="description" content="United Voices for Animals: 501(c)(3) youth-led non-profit empowering youth and communities to create positive change for animals. Discover our initiatives, join our team, and get involved in making a difference!">
+  
+  <!-- KEYWORDS (optional, minor impact) -->
+  <meta name="keywords" content="UVFA, United Voices for Animals, animal welfare, youth empowerment, kindness curriculum, get involved, initiatives, non profit, youth led non profit">
+  
+  <!-- Canonical URL (optional but recommended for clarity to Google) -->
+  <link rel="canonical" href="https://www.unitedvoicesforanimals.org/">
+  
+  <!-- Social Preview (Open Graph for sharing) -->
+  <meta property="og:title" content="United Voices for Animals – UVFA">
+  <meta property="og:description" content="Empowering youth to make a positive impact for animals. Get involved, learn more, and join our initiatives.">
+  <meta property="og:image" content="https://www.unitedvoicesforanimals.org/images/uvfa_logo_beige.png"> <!-- use actual logo path -->
+  <meta property="og:url" content="https://www.unitedvoicesforanimals.org/">
+  <meta property="og:type" content="website">
+
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    :root {
+      --uvfa-orange: #d85528;
+      --uvfa-coral: #e67a62;
+      --uvfa-beige: #dfa493;
+      --uvfa-light: #fad6c6;
+      --uvfa-white: #fdf9ee;
+    }
+    body {
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: var(--uvfa-white);
+      color: #2e1709;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--uvfa-orange);
+      padding: 0.7rem 1.2rem;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+    }
+    .logo-img {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      object-fit: cover;
+      background: var(--uvfa-light);
+    }
+    .logo-title {
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: var(--uvfa-white);
+      letter-spacing: 1.5px;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid #333;
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+/* Adjust this breakpoint as you like */
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;          /* hide links by default on phone */
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff;
+    padding: 10px 0;
+  }
+
+  .main-nav.open {
+    display: flex;          /* show when the JS adds .open */
+  }
+
+  .menu-toggle {
+    display: inline-block;  /* show the Menu button on phone */
+  }
+
+  /* Optional: stack header content nicely on mobile */
+  .site-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+    nav { display: flex; gap: 1.8rem; align-items: center; }
+    nav a, .dropdown-link {
+      color: var(--uvfa-white);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.19rem;
+      padding-bottom: 3px;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s;
+      position: relative;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    nav a:hover, .dropdown-link:hover { color: var(--uvfa-light); border-bottom: 2px solid var(--uvfa-beige);}
+    .dropdown { position: relative; }
+    .dropdown-link::after {
+      content: " ▼";
+      font-size: 1rem;
+      font-weight: 400;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: calc(100% + 7px);
+      left: 0;
+      background: var(--uvfa-light);
+      min-width: 190px;
+      box-shadow: 0 4px 18px rgba(216,85,40,0.07);
+      z-index: 99;
+      border-radius: 0 0 10px 10px;
+      overflow: hidden;
+    }
+    .dropdown-content a {
+      color: var(--uvfa-orange);
+      padding: 0.85em 1.2em;
+      text-decoration: none;
+      display: block;
+      font-size: 1.09rem;
+      border-bottom: 1px solid #efd1be;
+      background: var(--uvfa-light);
+    }
+    .dropdown-content a:hover { background: var(--uvfa-beige); color: var(--uvfa-white);}
+    .dropdown.active .dropdown-content { display: block; }
+    @media (max-width: 900px) {
+      .nav { flex-wrap: wrap; }
+      nav { gap: 1rem; }
+    }
+    @media (max-width: 700px) {
+      header { flex-direction: column; align-items: flex-start;}
+      nav { margin-top: 0.8em; flex-wrap: wrap;}
+      .logo-title { font-size: 1.5rem;}
+      .logo-img { width: 38px; height: 38px;}
+    }
+    .banner-img {
+      width: 100%;
+      max-height: 364px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+      background: #eee;
+    }
+    /* Orange Hero Block */
+    .hero-block {
+      background: var(--uvfa-orange);
+      padding: 2.5rem 1.1rem 2.7rem 1.1rem;
+      margin-top: 0;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .hero-heading {
+      font-size: 3.45rem;
+      color: var(--uvfa-white);
+      font-weight: 700;
+      margin-bottom: 0.65em;
+      margin-top: 0.2em;
+      letter-spacing: 0.03em;
+      line-height: 1.11;
+    }
+    .hero-intro {
+      font-size: 1.32rem;
+      color: var(--uvfa-white);
+      margin-bottom: 0;
+      max-width: 700px;
+      margin: 0 auto;
+      font-weight: 500;
+      line-height: 1.75;
+    }
+    .stats-block {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      gap: 2em;
+      background: none;
+      margin: 4.5rem 0 4rem 0;
+      padding: 0 0.5em;
+      flex-wrap: wrap;
+    }
+    .stat {
+      text-align: center;
+      flex: 1 1 180px;
+      min-width: 180px;
+      max-width: 320px;
+    }
+    .stat-number {
+      font-size: 6.8rem;
+      font-family: 'Montserrat', Arial, sans-serif;
+      color: var(--uvfa-orange);
+      font-weight: 800;
+      margin-bottom: 2.2em;
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 1.49rem;
+      color: #62351e;
+      font-weight: 700;
+      margin-bottom: 0.3em;
+      margin-top: 2.5em;
+      display: block;
+    }
+    .help-container {
+      background: var(--uvfa-white);
+      padding: 3rem 1.5rem 3.7rem 1.5rem;
+      margin-top: 5rem;
+      margin-bottom: 3.6rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 15px;
+      box-shadow: 0 3px 30px rgba(216,85,40,0.03);
+    }
+    .help-heading {
+      font-size: 2.9rem;
+      color: var(--uvfa-orange);
+      font-weight: 800;
+      margin-bottom: 2em;
+      margin-top: 0.2em;
+      line-height: 1.12;
+      letter-spacing: 0.018em;
+      text-align: center;
+    }
+    .help-initiative {
+      display: flex;
+      align-items: center;
+      gap: 2.2em;
+      margin-bottom: 4.2rem;
+      flex-wrap: wrap;
+    }
+    .help-initiative:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    .help-circle-img {
+      width: 312px;
+      height: 312px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: var(--uvfa-light);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.09);
+      border: 3px solid var(--uvfa-beige);
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .help-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: right;
+    }
+    .help-initiative:nth-child(even) .help-content {
+      align-items: flex-start;
+      text-align: left;
+    }
+    .help-title {
+      font-size: 2.1rem;
+      color: var(--uvfa-coral);
+      font-weight: 700;
+      margin-bottom: 0.3em;
+    }
+    .help-desc {
+      font-size: 1.3rem;
+      color: #432114;
+      max-width: 400px;
+      font-weight: 500;
+      line-height: 1.8;
+      margin-bottom: 0.15em;
+      margin-top: 0;
+    }
+    @media (max-width: 900px) {
+      .stats-block { flex-direction: column; align-items: center; gap:2.7em;}
+      .help-initiative,
+      .help-initiative:nth-child(even) { flex-direction: column; }
+      .help-circle-img { margin-bottom:0.4em; width: 210px; height: 210px;}
+      .help-title { font-size:1.19rem;}
+      .help-desc { font-size: 1.13rem;}
+      .help-content, .help-initiative:nth-child(even) .help-content { align-items: flex-start; text-align: left; }
+    }
+    footer {
+      background: var(--uvfa-light);
+      color: var(--uvfa-orange);
+      padding: 2.2rem 0 1.3rem 0;
+      text-align: center;
+      font-size: 1.18rem;
+      margin-top: 4em;
+    }
+    .footer-social {
+      margin: 1.2em 0 1em 0;
+      display: flex;
+      justify-content: center;
+      gap: 2.2rem;
+    }
+    .footer-social a {
+      font-size: 2.5rem;
+      color: var(--uvfa-coral);
+      text-decoration: none;
+      transition: color 0.2s;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .footer-social a:hover {
+      color: var(--uvfa-orange);
+    }
+    .footer-contact {
+      color: var(--uvfa-beige);
+      font-weight: 700;
+      font-size: 1.19rem;
+      text-decoration: none;
+      cursor: pointer;
+      border-bottom: 1px dotted var(--uvfa-beige);
+      transition: color 0.2s;
+    }
+    .footer-note {
+      font-size: 1.13rem;
+      color: #68422d;
+      opacity: .85;
+      margin-top: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+  <div class="header-left">
+    <img src="images/uvfa_logo_beige.png" class="logo-img" alt="UVFA Logo">
+    <span class="logo-title">UVFA</span>
+  </div>
+
+  <!-- Mobile menu button -->
+  <button class="menu-toggle" aria-label="Toggle navigation">
+    ☰ Menu
+  </button>
+
+  <!-- Single nav used for both desktop and mobile -->
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <div class="dropdown">
+      <button class="dropdown-link">About Us</button>
+      <div class="dropdown-content">
+        <a href="about.html#story">Our Story</a>
+        <a href="about.html#board">Our Board</a>
+      </div>
+    </div>
+    <a href="initiatives.html">Our Initiatives</a>
+    <a href="blog.html">Tales of Tails</a>
+    <a href="involved.html">Get Involved</a>
+    <a href="donate.html">Donate</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+  <!-- Top Banner Image -->
+  <img src="images/doggies.jpg" class="banner-img" alt="Animals Banner">
+
+  <!-- Orange Hero Block -->
+  <section class="hero-block">
+    <div class="hero-heading" style="color: var(--uvfa-white);">
+      Help us give every animal a voice
+    </div>
+    <div class="hero-intro" style="color: var(--uvfa-white);">
+      United Voices for Animals — is an international student-led initiative dedicated to helping stray animals and shelters that protect them through raising awareness, fundraising and community action. We empower students worldwide to take action and create change.
+    </div>
+  </section>
+
+  <!-- Large Impact Stats -->
+  <section class="stats-block">
+    <div class="stat">
+      <span class="stat-number">40+</span>
+      <span class="stat-label">Volunteers</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">5+</span>
+      <span class="stat-label">States Involved</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">1000+</span>
+      <span class="stat-label">People Reached</span>
+    </div>
+  </section>
+
+  <!-- How You Can Help Block -->
+  <section class="help-container">
+    <div class="help-heading">How you can help</div>
+    <div class="help-initiative">
+      <img class="help-circle-img" src="images/city_lead.jpg">
+      <div class="help-content">
+        <div class="help-title">Become a City Lead</div>
+        <div class="help-desc">
+          Help us by becoming a City Lead and growing the UVFA presence in your community.
+        </div>
+      </div>
+    </div>
+    <div class="help-initiative">
+      <img class="help-circle-img" src="images/kindness_curriculum.jpg">
+      <div class="help-content">
+        <div class="help-title">Join Our Running Initiatives</div>
+        <div class="help-desc">
+          Volunteer with UVFA in one of our current projects! From helping animals directly, to educational outreach, UVFA values every input.   
+        </div>
+      </div>
+    </div>
+    <div class="help-initiative">
+      <img class="help-circle-img" src="images/author.jpg">
+      <div class="help-content">
+        <div class="help-title">Volunteer as Author for Our Awareness Blog</div>
+        <div class="help-desc">
+          Volunteer remotely by writing articles for "Tales of Tails" our awareness journal.
+        </div>
+      </div>
+    </div>
+    <div class="help-initiative">
+      <img class="help-circle-img" src="images/donate.jpg">
+      <div class="help-content">
+        <div class="help-title">Donate</div>
+        <div class="help-desc">
+          Support UVFA efforts financially and help expand our impact across the globe.
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+    <div>
+      <a href="mailto:uvfa.org@gmail.com" class="footer-contact">uvfa.org@gmail.com</a>
+      <div class="footer-social">
+        <a href="https://www.tiktok.com/@uvfa.org?_t=ZP-8zBRIlVw0n0&_r=1" target="_blank" title="TikTok">
+          <i class="fab fa-tiktok"></i>
+        </a>
+        <a href="https://www.instagram.com/uvfa_org/profilecard/?igsh=Zzl1cHRxMmppaWp4" target="_blank" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+    <div class="footer-note">
+      United Voices for Animals is a registered 501(c)(3) non profit under Hack Club Bank
+    </div>
+  </footer>
+<script>
+  const menuBtn = document.querySelector('.menu-toggle');
+  const mainNav = document.querySelector('.main-nav');
+
+  menuBtn.addEventListener('click', () => {
+    mainNav.classList.toggle('open');
+  });
+</script>
+</body>
+</html>

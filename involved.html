@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Get Involved – UVFA</title>
+<!-- SEO DESCRIPTION -->
+  <meta name="description" content="Find out how you can join United Voices for Animals! Explore volunteer opportunities, become a project lead, and support our mission to create positive change for animals and youth.">
+  
+  <!-- KEYWORDS (optional, minor impact) -->
+  <meta name="keywords" content="UVFA, United Voices for Animals, animal welfare, youth empowerment, kindness curriculum, get involved, initiatives, non profit, youth led non profit">
+  
+  <!-- Canonical URL (optional but recommended for clarity to Google) -->
+  <link rel="canonical" href="https://www.unitedvoicesforanimals.org/">
+  
+  <!-- Social Preview (Open Graph for sharing) -->
+  <meta property="og:title" content="United Voices for Animals – UVFA">
+  <meta property="og:description" content="Empowering youth to make a positive impact for animals. Get involved, learn more, and join our initiatives.">
+  <meta property="og:image" content="https://www.unitedvoicesforanimals.org/images/uvfa_logo_beige.png"> <!-- use actual logo path -->
+  <meta property="og:url" content="https://www.unitedvoicesforanimals.org/">
+  <meta property="og:type" content="website">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    :root {
+      --uvfa-orange: #d85528;
+      --uvfa-coral: #e67a62;
+      --uvfa-beige: #dfa493;
+      --uvfa-light: #fad6c6;
+      --uvfa-white: #fdf9ee;
+    }
+    body {margin:0; font-family:'Montserrat',Arial,sans-serif; background:var(--uvfa-white); color:#2e1709;}
+    header {display:flex; align-items:center; justify-content:space-between; background:var(--uvfa-orange); padding:0.7rem 1.2rem; z-index:11; position:relative;}
+    .header-left {display:flex; align-items:center; gap:1.1rem;}
+    .logo-img {width:52px; height:52px; border-radius:12px; object-fit:cover; background:var(--uvfa-light);}
+    .logo-title {font-size:2.3rem; font-weight:700; color:var(--uvfa-white); letter-spacing:1.5px; text-shadow:0 1px 4px rgba(0,0,0,0.04);}
+    nav {display:flex; gap:1.8rem; align-items:center;}
+    nav a,.dropdown-link {color:var(--uvfa-white); text-decoration:none; font-weight:600; font-size:1.19rem; padding-bottom:3px;
+      border-bottom:2px solid transparent; transition:color 0.2s; position:relative; background:none; border:none; cursor:pointer;}
+    nav a:hover,.dropdown-link:hover {color:var(--uvfa-light); border-bottom:2px solid var(--uvfa-beige);}
+    .dropdown {position:relative;}
+    .dropdown-link::after {content:" ▼"; font-size:1rem; font-weight:400;}
+    .dropdown-content {display:none; position:absolute; top:calc(100% + 7px); left:0;
+      background:var(--uvfa-light); min-width:190px; box-shadow:0 4px 18px rgba(216,85,40,0.07); z-index:99; border-radius:0 0 10px 10px; overflow:hidden;}
+    .dropdown-content a {color:var(--uvfa-orange); padding:0.85em 1.2em; text-decoration:none; display:block; font-size:1.09rem; border-bottom:1px solid #efd1be; background:var(--uvfa-light);}
+    .dropdown-content a:hover {background:var(--uvfa-beige); color:var(--uvfa-white);}
+    .dropdown.active .dropdown-content {display:block;}
+    @media(max-width:900px){.nav{flex-wrap:wrap;}nav{gap:1rem;}}
+    @media(max-width:700px){header{flex-direction:column;align-items:flex-start;}nav{margin-top:0.8em;flex-wrap:wrap;}.logo-title{font-size:1.5rem;}.logo-img{width:38px;height:38px;}}
+
+    .gi-hero-section {
+      position:relative;
+      min-height:220px;
+      width:100vw;
+      left:50%; right:50%; margin-left:-50vw; margin-right:-50vw;
+      background:url('https://images.unsplash.com/photo-1465101178521-cbcce08244fc?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .gi-hero-overlay {
+      background: rgba(216,85,40, 0.78);
+      position: absolute; top: 0; left: 0; width:100%; height:100%; z-index:2;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .gi-hero-content {
+      position:relative; z-index:3; width:100%; text-align:center; padding:4.6em 1.2em 1.5em 1.2em;
+    }
+    .gi-hero-heading {font-size:3rem; color:var(--uvfa-white); font-weight:900; letter-spacing:.03em; margin-bottom:0.24em;}
+    .gi-hero-desc {color:var(--uvfa-white); font-size:1.2rem; font-weight:500; margin-top:.6em; margin-bottom:0; letter-spacing:.02em; max-width:650px; margin-left:auto; margin-right:auto;}
+    .gi-main {max-width: 1100px; margin: 0 auto; padding: 3rem 1.2rem 3rem 1.2rem;}
+    .gi-cards {display: flex; flex-wrap: wrap; gap: 2.8em; justify-content: center; align-items: stretch; margin-top:2.4em;}
+    .gi-card {
+      background: var(--uvfa-light);
+      border-radius: 18px;
+      box-shadow: 0 2px 18px rgba(216,85,40,0.06);
+      max-width: 350px; min-width:240px; flex: 1 1 220px;
+      display: flex; flex-direction: column; align-items: center; padding: 2.2em 1.6em 2.2em 1.6em;
+      transition: box-shadow 0.16s;
+    }
+    .gi-card:hover {box-shadow:0 6px 24px rgba(216,85,40,0.16);}
+    .gi-card-img {
+      width: 83px; height: 83px; object-fit: cover; border-radius: 50%; margin-bottom:1.1em; background:var(--uvfa-beige);
+      border:3px solid var(--uvfa-orange); box-shadow:0 2px 10px rgba(216,85,40,0.08);
+    }
+    .gi-card-title {
+      font-size: 1.34rem; font-weight: 900; color: var(--uvfa-orange); margin-bottom: 0.5em; text-align:center;
+    }
+    .gi-card-desc {font-size: 1.11rem; color:#432114; font-weight: 500; margin-bottom:1.23em; text-align:center;}
+    .gi-card-btn {
+      background: var(--uvfa-orange); color: var(--uvfa-white); border:none; font-size:1.07rem; border-radius:20px;
+      font-family:inherit; padding:0.7em 1.7em; font-weight:700; text-decoration:none; cursor:pointer; transition:background 0.14s; margin-top:.4em;
+    }
+    .gi-card-btn:hover {background: var(--uvfa-coral);}
+    @media(max-width:950px){.gi-cards{gap:1.2em;}.gi-card{max-width:96vw;}}
+    /* Footer */
+    footer {background: var(--uvfa-light); color: var(--uvfa-orange); padding: 2.2rem 0 1.3rem 0; text-align: center; font-size: 1.18rem; margin-top: 4em;}
+    .footer-social {margin: 1.2em 0 1em 0; display: flex; justify-content: center; gap: 2.2rem;}
+    .footer-social a {font-size:2.5rem; color:var(--uvfa-coral); text-decoration:none; transition:color 0.2s; display:inline-block; vertical-align:middle;}
+    .footer-social a:hover{color:var(--uvfa-orange);}
+    .footer-contact{color:var(--uvfa-beige); font-weight:700; font-size:1.19rem; text-decoration:none; cursor:pointer; border-bottom:1px dotted var(--uvfa-beige); transition:color 0.2s;}
+    .footer-note{font-size:1.13rem; color:#68422d; opacity:.85; margin-top:1.2em;}
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid #333;
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+/* Adjust this breakpoint as you like */
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;          /* hide links by default on phone */
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff;
+    padding: 10px 0;
+  }
+
+  .main-nav.open {
+    display: flex;          /* show when the JS adds .open */
+  }
+
+  .menu-toggle {
+    display: inline-block;  /* show the Menu button on phone */
+  }
+
+  /* Optional: stack header content nicely on mobile */
+  .site-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var dropdown = document.querySelector('.dropdown');
+      var link = document.querySelector('.dropdown-link');
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        dropdown.classList.toggle('active');
+        document.addEventListener('click', function handler(event) {
+          if (!dropdown.contains(event.target)) {
+            dropdown.classList.remove('active');
+            document.removeEventListener('click', handler);
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <header class="site-header">
+  <div class="logo">UVFA</div>
+
+  <!-- Mobile menu button -->
+  <button class="menu-toggle" aria-label="Toggle navigation">
+    ☰ Menu
+  </button>
+
+  <!-- Your existing nav links -->
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="get-involved.html">Get Involved</a>
+    <a href="blog.html">Blog</a>
+    <a href="donate.html">Donate</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+  <section class="gi-hero-section">
+    <div class="gi-hero-overlay"></div>
+    <div class="gi-hero-content">
+      <div class="gi-hero-heading">Get Involved</div>
+      <div class="gi-hero-desc">
+        At UVFA, every student and animal lover can make a difference. Here’s how you can help us create change for animals in your community and around the world!
+      </div>
+    </div>
+  </section>
+
+  <main class="gi-main">
+    <div class="gi-cards">
+      <div class="gi-card">
+        <img class="gi-card-img" src="images/become_city.jpg" alt="Chapter">
+        <div class="gi-card-title">Become a City/State Lead</div>
+        <div class="gi-card-desc">
+          Start a local chapter, lead new projects, and grow UVFA in your region. We’ll help you every step of the way!
+        </div>
+        <a href="posters/city-lead.pdf" class="gi-card-btn">Requirements and Application Form</a>
+      </div>
+      <div class="gi-card">
+        <img class="gi-card-img" src="images/project.jpg" alt="Volunteer">
+        <div class="gi-card-title">Join the Kindness Curriculum</div>
+        <div class="gi-card-desc">
+          Join our team and help raise awareness through educational outreach in your community!
+        </div>
+        <a href="posters/kindness.pdf" class="gi-card-btn">Requirements and Application Form</a>
+      </div>
+      <div class="gi-card" id=become-author>
+        <img class="gi-card-img" src="images/volunteer_author.jpg" alt="Write">
+        <div class="gi-card-title">Volunteer as Author</div>
+        <div class="gi-card-desc">
+          Love to write? Join our Tales of Tails blog as an author and help us spread education, news, and hope.
+        </div>
+        <a href="posters/authors.pdf" class="gi-card-btn">Requirements and Application Form</a>
+      </div>
+<div class="gi-card" id="project-lead">
+  <img class="gi-card-img" src="images/project_lead.jpg" alt="Project Lead">
+  <div class="gi-card-title">Become a Project Lead</div>
+  <div class="gi-card-desc">
+    Are you passionate about animal welfare and leadership? We're looking for motivated Project Leads to oversee our Kindness Curriculum and Awareness Blog. Join us to guide student teams, create positive change, and launch creative projects!
+  </div>
+  <a href="posters/project.pdf" class="gi-card-btn">Requirements and Application Form</a>
+</div>
+      <div class="gi-card">
+        <img class="gi-card-img" src="images/fundraise.jpg" alt="Fundraise">
+        <div class="gi-card-title">Fundraise or Donate</div>
+        <div class="gi-card-desc">
+          Support us financially—donate, set up a fundraiser, or help with campaigns. Every gift directly helps animals!
+        </div>
+        <a href="donate.html" class="gi-card-btn">Donate Now</a>
+      </div>
+      <div class="gi-card">
+        <img class="gi-card-img" src="images/become_ambassador.jpg" alt="Ambassador">
+        <div class="gi-card-title">Become an Ambassador</div>
+        <div class="gi-card-desc">
+          Represent UVFA and animal welfare in your school, city, or online! Ambassadors inspire others, educate, and advocate for the cause everywhere—from social media to classrooms.
+        </div>
+        <a href="posters/ambassador.pdf" class="gi-card-btn">Requirements and Application Form</a>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div>
+      <a href="mailto:uvfa.org@gmail.com" class="footer-contact">uvfa.org@gmail.com</a>
+      <div class="footer-social">
+        <a href="https://www.tiktok.com/@uvfa.org?_t=ZP-8zBRIlVw0n0&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/uvfa_org/profilecard/?igsh=Zzl1cHRxMmppaWp4" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-note">
+      United Voices for Animals is a registered 501(c)(3) non profit under Hack Club Bank
+    </div>
+  </footer>
+<script>
+  const menuBtn = document.querySelector('.menu-toggle');
+  const mainNav = document.querySelector('.main-nav');
+
+  menuBtn.addEventListener('click', () => {
+    mainNav.classList.toggle('open');
+  });
+</script>
+</body>
+</html>

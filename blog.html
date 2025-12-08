@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="canonical" href="https://www.unitedvoicesforanimals.org/">
+  <title>Tales of Tails – UVFA Blog</title>
+<!-- SEO DESCRIPTION -->
+  <meta name="description" content="Read the latest stories, news, and educational posts from the UVFA Awareness Blog.">
+  
+  <!-- KEYWORDS (optional, minor impact) -->
+  <meta name="keywords" content="UVFA, United Voices for Animals, animal welfare, youth empowerment, kindness curriculum, get involved, initiatives, non profit, youth led non profit">
+  
+  <!-- Canonical URL (optional but recommended for clarity to Google) -->
+  <link rel="canonical" href="https://www.unitedvoicesforanimals.org/">
+  
+  <!-- Social Preview (Open Graph for sharing) -->
+  <meta property="og:title" content="United Voices for Animals – UVFA">
+  <meta property="og:description" content="Empowering youth to make a positive impact for animals. Get involved, learn more, and join our initiatives.">
+  <meta property="og:image" content="https://www.unitedvoicesforanimals.org/images/uvfa_logo_beige.png"> <!-- use actual logo path -->
+  <meta property="og:url" content="https://www.unitedvoicesforanimals.org/">
+  <meta property="og:type" content="website">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    :root {
+      --uvfa-orange: #d85528;
+      --uvfa-coral: #e67a62;
+      --uvfa-beige: #dfa493;
+      --uvfa-light: #fad6c6;
+      --uvfa-white: #fdf9ee;
+    }
+.orange-link {
+  color: var(--uvfa-orange); /* Uses your site’s orange, or replace with #d85528 */
+  font-weight: bold;
+  text-decoration: underline; /* Keep underline for clarity, or use none if you want */
+  transition: color 0.2s;
+}
+.orange-link:hover,
+.orange-link:focus {
+  color: var(--uvfa-coral);  /* Coral shade for hover, or keep same as orange */
+}
+
+    body {margin:0; font-family:'Montserrat',Arial,sans-serif; background:var(--uvfa-white); color:#2e1709;}
+    header {display:flex; align-items:center; justify-content:space-between; background:var(--uvfa-orange); padding:0.7rem 1.2rem; z-index:11; position:relative;}
+    .header-left {display:flex; align-items:center; gap:1.1rem;}
+    .logo-img {width:52px; height:52px; border-radius:12px; object-fit:cover; background:var(--uvfa-light);}
+    .logo-title {font-size:2.3rem; font-weight:700; color:var(--uvfa-white); letter-spacing:1.5px; text-shadow:0 1px 4px rgba(0,0,0,0.04);}
+    nav {display:flex; gap:1.8rem; align-items:center;}
+    nav a,.dropdown-link {color:var(--uvfa-white); text-decoration:none; font-weight:600; font-size:1.19rem; padding-bottom:3px;
+      border-bottom:2px solid transparent; transition:color 0.2s; position:relative; background:none; border:none; cursor:pointer;}
+    nav a:hover,.dropdown-link:hover {color:var(--uvfa-light); border-bottom:2px solid var(--uvfa-beige);}
+    .dropdown {position:relative;}
+    .dropdown-link::after {content:" ▼"; font-size:1rem; font-weight:400;}
+    .dropdown-content {display:none; position:absolute; top:calc(100% + 7px); left:0;
+      background:var(--uvfa-light); min-width:190px; box-shadow:0 4px 18px rgba(216,85,40,0.07); z-index:99; border-radius:0 0 10px 10px; overflow:hidden;}
+    .dropdown-content a {color:var(--uvfa-orange); padding:0.85em 1.2em; text-decoration:none; display:block; font-size:1.09rem; border-bottom:1px solid #efd1be; background:var(--uvfa-light);}
+    .dropdown-content a:hover {background:var(--uvfa-beige); color:var(--uvfa-white);}
+    .dropdown.active .dropdown-content {display:block;}
+    @media(max-width:900px){.nav{flex-wrap:wrap;}nav{gap:1rem;}}
+    @media(max-width:700px){header{flex-direction:column;align-items:flex-start;}nav{margin-top:0.8em;flex-wrap:wrap;}.logo-title{font-size:1.5rem;}.logo-img{width:38px;height:38px;}}
+    /* Hero */
+    .blog-hero-section {
+      position: relative;
+      width: 100vw;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      background: url('images/dog.jpg') center/cover no-repeat;
+      min-height: 230px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+    }
+    .blog-hero-overlay {
+      width: 100vw;
+      height: 100%;
+      background: rgba(216,85,40, 0.75);
+      position: absolute; top: 0; left: 0;
+      z-index: 2;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .blog-hero-content {
+      position: relative; z-index: 3; width: 100%; text-align: center; padding: 5.2em 1.2em 1.3em 1.2em;
+    }
+    .blog-hero-heading {
+      font-size: 3.1rem; color: var(--uvfa-white); font-weight: 900; letter-spacing: 0.03em; margin-bottom:0.09em; text-shadow:0 2px 20px rgba(0,0,0,0.18);
+    }
+    .blog-hero-desc {
+      color:var(--uvfa-white); font-size:1.29rem; font-weight: 500; margin-top:.6em; margin-bottom:2em; letter-spacing:.02em; max-width:600px; margin-left:auto; margin-right:auto; text-shadow:0 1px 10px rgba(0,0,0,0.10);
+    }
+    /* Blog Cards Grid */
+    .blog-main {max-width: 1140px; margin: 0 auto; padding: 3.7rem 1.2rem;}
+    .blog-coming-soon {
+      text-align:center;
+      color:var(--uvfa-coral);
+      font-size:1.51rem;
+      font-weight:700;
+      margin-bottom:2.1em;
+      margin-top:2.2em;
+    }
+    .blog-card-list {
+      display:flex; flex-wrap:wrap; gap:2.2em; justify-content:center; align-items:stretch; margin-top: 0.5em;
+    }
+    .blog-card {
+      background: var(--uvfa-light);
+      border-radius: 18px;
+      box-shadow: 0 2px 18px rgba(216,85,40,0.06);
+      max-width: 340px;
+      min-width: 250px;
+      flex: 1 1 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2em;
+      opacity: 0.5;
+      cursor: not-allowed;
+      transition: opacity 0.2s;
+    }
+    .blog-card.coming {opacity:0.66; }
+    .blog-card-img {
+      width: 100%; max-width: 320px; height: 180px; object-fit: cover; border-top-left-radius:18px; border-top-right-radius:18px; background: #eee;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    .blog-card-content {padding: 2em 1em; text-align:left; width:100%;}
+    .blog-card-title {font-size:1.34rem; font-weight:900; color:var(--uvfa-orange); margin-bottom:.5em;}
+    .blog-card-desc {font-size:1.09rem; color:#432114; font-weight: 500;}
+    .blog-card-soon-label {text-align:center; color:var(--uvfa-beige); font-size:0.97rem; font-weight:700; margin-top:.6em;}
+    @media(max-width:1150px){.blog-main{padding:2.7rem 0.3rem;}.blog-card-list{gap:1em;}}
+    @media(max-width:700px){.blog-hero-heading{font-size:1.7rem;}.blog-main{padding:1.3rem 1rem;}.blog-card{max-width:98vw;}.blog-card-img{height:120px;}}
+    footer {background: var(--uvfa-light); color: var(--uvfa-orange); padding: 2.2rem 0 1.3rem 0; text-align: center; font-size: 1.18rem; margin-top: 4em;}
+    .footer-social {margin: 1.2em 0 1em 0; display: flex; justify-content: center; gap: 2.2rem;}
+    .footer-social a {font-size:2.5rem; color:var(--uvfa-coral); text-decoration:none; transition:color 0.2s; display:inline-block; vertical-align:middle;}
+    .footer-social a:hover{color:var(--uvfa-orange);}
+    .footer-contact{color:var(--uvfa-beige); font-weight:700; font-size:1.19rem; text-decoration:none; cursor:pointer; border-bottom:1px dotted var(--uvfa-beige); transition:color 0.2s;}
+    .footer-note{font-size:1.13rem; color:#68422d; opacity:.85; margin-top:1.2em;}
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid #333;
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+/* Adjust this breakpoint as you like */
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;          /* hide links by default on phone */
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff;
+    padding: 10px 0;
+  }
+
+  .main-nav.open {
+    display: flex;          /* show when the JS adds .open */
+  }
+
+  .menu-toggle {
+    display: inline-block;  /* show the Menu button on phone */
+  }
+
+  /* Optional: stack header content nicely on mobile */
+  .site-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var dropdown = document.querySelector('.dropdown');
+      var link = document.querySelector('.dropdown-link');
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        dropdown.classList.toggle('active');
+        document.addEventListener('click', function handler(event) {
+          if (!dropdown.contains(event.target)) {
+            dropdown.classList.remove('active');
+            document.removeEventListener('click', handler);
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <header class="site-header">
+  <div class="header-left">
+    <img src="images/uvfa_logo_beige.png" class="logo-img" alt="UVFA Logo">
+    <span class="logo-title">UVFA</span>
+  </div>
+
+  <!-- Mobile menu button -->
+  <button class="menu-toggle" aria-label="Toggle navigation">
+    ☰ Menu
+  </button>
+
+  <!-- Single nav used for both desktop and mobile -->
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <div class="dropdown">
+      <button class="dropdown-link">About Us</button>
+      <div class="dropdown-content">
+        <a href="about.html#story">Our Story</a>
+        <a href="about.html#board">Our Board</a>
+      </div>
+    </div>
+    <a href="initiatives.html">Our Initiatives</a>
+    <a href="blog.html">Tales of Tails</a>
+    <a href="involved.html">Get Involved</a>
+    <a href="donate.html">Donate</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+  <section class="blog-hero-section">
+    <div class="blog-hero-overlay"></div>
+    <div class="blog-hero-content">
+      <div class="blog-hero-heading">Tales of Tails</div>
+      <div class="blog-hero-desc">Stories, updates, and inspiration from the UVFA community. Want to share your own? Contact Us!</div>
+    </div>
+  </section>
+
+  <main class="blog-main">
+    <div class="blog-coming-soon">
+      The UVFA Blog is coming soon!  
+      <br>We’ll be posting new stories, spotlights, and interviews about animal welfare and student action.  
+      <br>Check back for new posts—or <a href="involved.html#become-author" class="orange-link">become an author with us</a>
+    </div>
+    <div class="blog-card-list">
+      <!-- Sample blog cards, shown as "coming soon"—just copy for real posts! -->
+      <div class="blog-card coming">
+        <img class="blog-card-img" src="images/woman_rescue_dog.jpg" alt="Blog Cover 1">
+        <div class="blog-card-content">
+          <div class="blog-card-title">Chapter 2: Coming Soon</div>
+          <div class="blog-card-desc">We are currently preparing new blog posts for you</div>
+          <div class="blog-card-soon-label">Stay tuned!</div>
+        </div>
+      </div>
+      <div class="blog-card coming">
+        <img class="blog-card-img" src="images/blog.jpg" alt="Blog Cover 2">
+        <div class="blog-card-content">
+          <div class="blog-card-title">Chapter 1: Coming Soon</div>
+          <div class="blog-card-desc">We are currently preparing new blog posts for you.</div>
+          <div class="blog-card-soon-label">Stay tuned!</div>
+        </div>
+      </div>
+      <!-- Add new blog cards here when ready! -->
+    </div>
+  </main>
+
+  <footer>
+    <div>
+      <a href="mailto:uvfa.org@gmail.com" class="footer-contact">uvfa.org@gmail.com</a>
+      <div class="footer-social">
+        <a href="https://www.tiktok.com/@uvfa.org?_t=ZP-8zBRIlVw0n0&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/uvfa_org/profilecard/?igsh=Zzl1cHRxMmppaWp4" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-note">
+      United Voices for Animals is a registered 501(c)(3) non profit under Hack Club Bank
+    </div>
+  </footer>
+<script>
+  const menuBtn = document.querySelector('.menu-toggle');
+  const mainNav = document.querySelector('.main-nav');
+
+  menuBtn.addEventListener('click', () => {
+    mainNav.classList.toggle('open');
+  });
+</script>
+</body>
+</html>
