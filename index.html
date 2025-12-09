@@ -39,100 +39,87 @@
       background: var(--uvfa-white);
       color: #2e1709;
     }
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: var(--uvfa-orange);
-      padding: 0.7rem 1.2rem;
-    }
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 1.1rem;
-    }
-    .logo-img {
-      width: 52px;
-      height: 52px;
-      border-radius: 12px;
-      object-fit: cover;
-      background: var(--uvfa-light);
-    }
-    .logo-title {
-      font-size: 2.3rem;
-      font-weight: 700;
-      color: var(--uvfa-white);
-      letter-spacing: 1.5px;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.04);
-    }
+    /* HEADER LAYOUT – DESKTOP */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--uvfa-orange);
+  padding: 0.7rem 1.2rem;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.logo-img {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: var(--uvfa-light);
+}
+
+.logo-title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--uvfa-white);
+  letter-spacing: 1.5px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+/* NAV + MENU BUTTON BASE */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
 .menu-toggle {
-  display: none;
-  background: none;
-  border: 1px solid #333;
+  display: none; /* hide button on desktop */
+  background-color: var(--uvfa-light);
+  color: #4b2a16;
+  border: 1px solid #4b2a16;
   padding: 6px 10px;
   font-size: 14px;
   border-radius: 4px;
+  cursor: pointer;
 }
 
-/* Adjust this breakpoint as you like */
+/* MOBILE – show Menu button, hide links until opened */
 @media (max-width: 768px) {
   .site-header {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* logo left, button right */
+    justify-content: space-between;
   }
 
   .menu-toggle {
-    display: inline-block;  /* show button on mobile */
-    background-color: #f4e7d9;  /* UVFA beige */
-    color: #4b2a16;             /* UVFA dark text */
-    border: 1px solid #4b2a16;
-    padding: 6px 10px;
-    font-size: 14px;
-    border-radius: 4px;
-    cursor: pointer;
+    display: inline-block;
   }
 
   .main-nav {
-    display: none;              /* hide links until opened */
+    display: none;               /* hidden until .open added */
     flex-direction: column;
     gap: 10px;
-    background-color: #d85528 ;  /* UVFA orange background for dropdown */
+    background-color: var(--uvfa-orange);
     padding: 10px 20px;
     margin-top: 10px;
   }
 
   .main-nav.open {
-    display: flex;              /* show when JS toggles .open */
+    display: flex;               /* show when JS toggles .open */
   }
 
   .main-nav a {
-    color: #4b2a16;             /* readable on orange */
+    color: #4b2a16;              /* readable on orange */
   }
 }
-
-  /* Optional: stack header content nicely on mobile */
-  .site-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* logo left, nav/menu right */
-  padding: 10px 20px;
-}
-
-/* Make the nav itself a row on desktop */
-.main-nav {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-/* Hide the Menu button on desktop */
-.menu-toggle {
-  display: none;
-}
-}
-    nav { display: flex; gap: 1.8rem; align-items: center; }
-    nav a, .dropdown-link {
+    
+    .main-nav a, 
+    .dropdown-link {
       color: var(--uvfa-white);
       text-decoration: none;
       font-weight: 600;
@@ -145,7 +132,7 @@
       border: none;
       cursor: pointer;
     }
-    nav a:hover, .dropdown-link:hover { color: var(--uvfa-light); border-bottom: 2px solid var(--uvfa-beige);}
+    .main-nav a:hover, .dropdown-link:hover { color: var(--uvfa-light); border-bottom: 2px solid var(--uvfa-beige);}
     .dropdown { position: relative; }
     .dropdown-link::after {
       content: " ▼";

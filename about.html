@@ -37,80 +37,160 @@
       background: var(--uvfa-white);
       color: #2e1709;
     }
-    header {
+  
+  /* HEADER – DESKTOP */
+  .site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--uvfa-orange);
+    padding: 0.7rem 1.2rem;
+    z-index: 11;
+    position: relative;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+  }
+
+  .logo-img {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    object-fit: cover;
+    background: var(--uvfa-light);
+  }
+
+  .logo-title {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: var(--uvfa-white);
+    letter-spacing: 1.5px;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+
+  /* NAV + MENU BUTTON BASE */
+  .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+  }
+
+  .menu-toggle {
+    display: none; /* hide button on desktop */
+    background-color: var(--uvfa-light);
+    color: #4b2a16;
+    border: 1px solid #4b2a16;
+    padding: 6px 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .main-nav a,
+  .dropdown-link {
+    color: var(--uvfa-white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.19rem;
+    padding-bottom: 3px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s;
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .main-nav a:hover,
+  .dropdown-link:hover {
+    color: var(--uvfa-light);
+    border-bottom: 2px solid var(--uvfa-beige);
+  }
+
+  .dropdown { position: relative; }
+
+  .dropdown-link::after {
+    content: " ▼";
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: calc(100% + 7px);
+    left: 0;
+    background: var(--uvfa-light);
+    min-width: 190px;
+    box-shadow: 0 4px 18px rgba(216,85,40,0.07);
+    z-index: 99;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+  }
+
+  .dropdown-content a {
+    color: var(--uvfa-orange);
+    padding: 0.85em 1.2em;
+    text-decoration: none;
+    display: block;
+    font-size: 1.09rem;
+    border-bottom: 1px solid #efd1be;
+    background: var(--uvfa-light);
+  }
+
+  .dropdown-content a:hover {
+    background: var(--uvfa-beige);
+    color: var(--uvfa-white);
+  }
+
+  .dropdown.active .dropdown-content { display: block; }
+
+  /* MOBILE – show Menu button, hide links until opened */
+  @media (max-width: 768px) {
+    .site-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: var(--uvfa-orange);
       padding: 0.7rem 1.2rem;
-      z-index: 11;
-      position: relative;
     }
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 1.1rem;
-    }
-    .logo-img {
-      width: 52px; height: 52px; border-radius: 12px; object-fit: cover; background: var(--uvfa-light);
-    }
-    .logo-title {
-      font-size: 2.3rem; font-weight: 700; color: var(--uvfa-white); letter-spacing: 1.5px; text-shadow: 0 1px 4px rgba(0,0,0,0.04);
-    }
-    nav { display: flex; gap: 1.8rem; align-items: center; }
-    nav a, .dropdown-link {
-      color: var(--uvfa-white);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.19rem;
-      padding-bottom: 3px;
-      border-bottom: 2px solid transparent;
-      transition: color 0.2s;
-      position: relative;
-      background: none;
-      border: none;
+
+    .menu-toggle {
+      display: inline-block;
+      background-color: #f4e7d9;
+      color: #4b2a16;
+      border: 1px solid #4b2a16;
+      padding: 6px 10px;
+      font-size: 14px;
+      border-radius: 4px;
       cursor: pointer;
     }
-    nav a:hover, .dropdown-link:hover { color: var(--uvfa-light); border-bottom: 2px solid var(--uvfa-beige);}
-    .dropdown { position: relative; }
-    .dropdown-link::after {
-      content: " ▼";
-      font-size: 1rem;
-      font-weight: 400;
-    }
-    .dropdown-content {
+
+    .main-nav {
       display: none;
-      position: absolute;
-      top: calc(100% + 7px);
-      left: 0;
-      background: var(--uvfa-light);
-      min-width: 190px;
-      box-shadow: 0 4px 18px rgba(216,85,40,0.07);
-      z-index: 99;
-      border-radius: 0 0 10px 10px;
-      overflow: hidden;
+      flex-direction: column;
+      gap: 10px;
+      background-color: #d85528;
+      padding: 10px 20px;
+      margin-top: 10px;
     }
-    .dropdown-content a {
-      color: var(--uvfa-orange);
-      padding: 0.85em 1.2em;
-      text-decoration: none;
-      display: block;
-      font-size: 1.09rem;
-      border-bottom: 1px solid #efd1be;
-      background: var(--uvfa-light);
+
+    .main-nav.open {
+      display: flex;
     }
-    .dropdown-content a:hover { background: var(--uvfa-beige); color: var(--uvfa-white);}
-    .dropdown.active .dropdown-content { display: block; }
-    @media (max-width: 900px) {
-      .nav { flex-wrap: wrap; }
-      nav { gap: 1rem; }
+
+    .main-nav a {
+      color: #4b2a16;
     }
-    @media (max-width: 700px) {
-      header { flex-direction: column; align-items: flex-start;}
-      nav { margin-top: 0.8em; flex-wrap: wrap;}
-      .logo-title { font-size: 1.5rem;}
-      .logo-img { width: 38px; height: 38px;}
-    }
+
+    /* optional smaller logo/text on mobile */
+    .logo-title { font-size: 1.5rem; }
+    .logo-img { width: 38px; height: 38px; }
+  }
+
+  /* (keep all your hero/story/board/footer styles from above here unchanged) */
     .hero-bg {
       width: 100%;
       min-height: 350px;
@@ -293,72 +373,7 @@
     .footer-social a:hover {color: var(--uvfa-orange);}
     .footer-contact {color: var(--uvfa-beige); font-weight: 700; font-size: 1.19rem; text-decoration: none; cursor: pointer; border-bottom: 1px dotted var(--uvfa-beige); transition: color 0.2s;}
     .footer-note {font-size: 1.13rem; color: #68422d; opacity: .85; margin-top: 1.2em;}
-.menu-toggle {
-  display: none;
-  background: none;
-  border: 1px solid #333;
-  padding: 6px 10px;
-  font-size: 14px;
-  border-radius: 4px;
-}
 
-/* Adjust this breakpoint as you like */
-@media (max-width: 768px) {
-  .site-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* logo left, button right */
-  }
-
-  .menu-toggle {
-    display: inline-block;  /* show button on mobile */
-    background-color: #f4e7d9;  /* UVFA beige */
-    color: #4b2a16;             /* UVFA dark text */
-    border: 1px solid #4b2a16;
-    padding: 6px 10px;
-    font-size: 14px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-
-  .main-nav {
-    display: none;              /* hide links until opened */
-    flex-direction: column;
-    gap: 10px;
-    background-color: #d85528 ;  /* UVFA orange background for dropdown */
-    padding: 10px 20px;
-    margin-top: 10px;
-  }
-
-  .main-nav.open {
-    display: flex;              /* show when JS toggles .open */
-  }
-
-  .main-nav a {
-    color: #4b2a16;             /* readable on orange */
-  }
-}
-
-  /* Optional: stack header content nicely on mobile */
-  .site-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* logo left, nav/menu right */
-  padding: 10px 20px;
-}
-
-/* Make the nav itself a row on desktop */
-.main-nav {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-/* Hide the Menu button on desktop */
-.menu-toggle {
-  display: none;
-}
-}
   </style>
   <script>
     // Dropdown open/close logic (works for click and touch!)
