@@ -414,45 +414,37 @@
     margin-top:1.2em;
   }
 </style>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var dropdown = document.querySelector('.dropdown');
-      var link = document.querySelector('.dropdown-link');
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        dropdown.classList.toggle('active');
-        document.addEventListener('click', function handler(event) {
-          if (!dropdown.contains(event.target)) {
-            dropdown.classList.remove('active');
-            document.removeEventListener('click', handler);
-          }
-        });
-      });
-    });
-  </script>
+  
 </head>
 <body>
-  <header>
-    <div class="header-left">
-      <img src="images/uvfa_logo_beige.png" class="logo-img" alt="UVFA Logo">
-      <span class="logo-title">UVFA</span>
-    </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <div class="dropdown">
-        <button class="dropdown-link">About Us</button>
-        <div class="dropdown-content">
-          <a href="about.html#story">Our Story</a>
-          <a href="about.html#board">Our Board</a>
-        </div>
+  <header class="site-header">
+  <div class="header-left">
+    <img src="images/uvfa_logo_beige.png" class="logo-img" alt="UVFA Logo">
+    <span class="logo-title">UVFA</span>
+  </div>
+
+  <!-- Mobile menu button -->
+  <button class="menu-toggle" aria-label="Toggle navigation">
+    ☰ Menu
+  </button>
+
+  <!-- Single nav used for both desktop and mobile -->
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <div class="dropdown">
+      <a class="dropdown-link" href="about.html">About Us</a>
+      <div class="dropdown-content">
+        <a href="about.html#story">Our Story</a>
+        <a href="about.html#board">Our Board</a>
       </div>
-      <a href="initiatives.html">Our Initiatives</a>
-      <a href="blog.html">Tales of Tails</a>
-      <a href="involved.html">Get Involved</a>
-      <a href="donate.html">Donate</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+    </div>
+    <a href="initiatives.html">Our Initiatives</a>
+    <a href="blog.html">Tales of Tails</a>
+    <a href="involved.html">Get Involved</a>
+    <a href="donate.html">Donate</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
   <section class="title-section">
     <div class="main-title" style="margin-bottom:0.2em;">Our Initiatives</div>
