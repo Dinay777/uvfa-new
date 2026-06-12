@@ -3,393 +3,243 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Get Involved – UVFA</title>
-<!-- SEO DESCRIPTION -->
-  <meta name="description" content="Find out how you can join United Voices for Animals! Explore volunteer opportunities, become a project lead, and support our mission to create positive change for animals and youth.">
-  
-  <!-- KEYWORDS (optional, minor impact) -->
-  <meta name="keywords" content="UVFA, United Voices for Animals, animal welfare, youth empowerment, kindness curriculum, get involved, initiatives, non profit, youth led non profit">
-  
-  <!-- Canonical URL (optional but recommended for clarity to Google) -->
   <link rel="canonical" href="https://www.unitedvoicesforanimals.org/">
-  
-  <!-- Social Preview (Open Graph for sharing) -->
+  <title>Get Involved – UVFA</title>
+  <meta name="description" content="Find out how you can join United Voices for Animals! Explore volunteer opportunities, become a project lead, and support our mission.">
+  <meta name="keywords" content="UVFA, United Voices for Animals, animal welfare, youth empowerment, kindness curriculum, get involved, initiatives, non profit, youth led non profit">
   <meta property="og:title" content="United Voices for Animals – UVFA">
-  <meta property="og:description" content="Empowering youth to make a positive impact for animals. Get involved, learn more, and join our initiatives.">
-  <meta property="og:image" content="https://www.unitedvoicesforanimals.org/images/uvfa_logo_beige.png"> <!-- use actual logo path -->
+  <meta property="og:description" content="Empowering youth to make a positive impact for animals.">
+  <meta property="og:image" content="https://www.unitedvoicesforanimals.org/images/uvfa_logo_beige.png">
   <meta property="og:url" content="https://www.unitedvoicesforanimals.org/">
   <meta property="og:type" content="website">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:600,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
- <style>
-  :root {
-    --uvfa-orange: #d85528;
-    --uvfa-coral: #e67a62;
-    --uvfa-beige: #dfa493;
-    --uvfa-light: #fad6c6;
-    --uvfa-white: #fdf9ee;
-  }
-
-  body {
-    margin:0;
-    font-family:'Montserrat',Arial,sans-serif;
-    background:var(--uvfa-white);
-    color:#2e1709;
-  }
-
-  /* HEADER – DESKTOP */
-  .site-header {
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    background:var(--uvfa-orange);
-    padding:0.7rem 1.2rem;
-    z-index:11;
-    position:relative;
-  }
-
-  .header-left {
-    display:flex;
-    align-items:center;
-    gap:1.1rem;
-  }
-
-  .logo-img {
-    width:52px;
-    height:52px;
-    border-radius:12px;
-    object-fit:cover;
-    background:var(--uvfa-light);
-  }
-
-  .logo-title {
-    font-size:2.3rem;
-    font-weight:700;
-    color:var(--uvfa-white);
-    letter-spacing:1.5px;
-    text-shadow:0 1px 4px rgba(0,0,0,0.04);
-  }
-
-  /* NAV + MENU BUTTON BASE */
-  .main-nav {
-    display:flex;
-    align-items:center;
-    gap:1.8rem;
-  }
-
-  .menu-toggle {
-    display:none; /* hide button on desktop */
-    background-color:var(--uvfa-light);
-    color:#4b2a16;
-    border:1px solid #4b2a16;
-    padding:6px 10px;
-    font-size:14px;
-    border-radius:4px;
-    cursor:pointer;
-  }
-
-  .main-nav a,
-  .dropdown-link {
-    color:var(--uvfa-white);
-    text-decoration:none;
-    font-weight:600;
-    font-size:1.19rem;
-    padding-bottom:3px;
-    border-bottom:2px solid transparent;
-    transition:color 0.2s;
-    position:relative;
-    background:none;
-    border:none;
-    cursor:pointer;
-  }
-
-  .main-nav a:hover,
-  .dropdown-link:hover {
-    color:var(--uvfa-light);
-    border-bottom:2px solid var(--uvfa-beige);
-  }
-
-  .dropdown {position:relative;}
-
-  .dropdown-link::after {
-    content:" ▼";
-    font-size:1rem;
-    font-weight:400;
-  }
-
-  .dropdown-content {
-    display:none;
-    position:absolute;
-    top:calc(100% + 7px);
-    left:0;
-    background:var(--uvfa-light);
-    min-width:190px;
-    box-shadow:0 4px 18px rgba(216,85,40,0.07);
-    z-index:99;
-    border-radius:0 0 10px 10px;
-    overflow:hidden;
-  }
-
-  .dropdown-content a {
-    color:var(--uvfa-orange);
-    padding:0.85em 1.2em;
-    text-decoration:none;
-    display:block;
-    font-size:1.09rem;
-    border-bottom:1px solid #efd1be;
-    background:var(--uvfa-light);
-  }
-
-  .dropdown-content a:hover {
-    background:var(--uvfa-beige);
-    color:var(--uvfa-white);
-  }
-
-  .dropdown.active .dropdown-content {display:block;}
-
-  /* MOBILE – show Menu button, hide links until opened */
-  @media (max-width: 768px) {
-    .site-header {
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:0.7rem 1.2rem;
+  <style>
+    :root { --orange: #d85528; --coral: #e67a62; --beige: #dfa493; --light: #fad6c6; --cream: #fdf9ee; --dark: #2e1709; --dark-bg: #1c0d05; --radius: 16px; --t: 0.28s cubic-bezier(.4,0,.2,1); }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--dark); line-height: 1.7; overflow-x: hidden; }
+    .site-header { position: sticky; top: 0; z-index: 900; display: flex; align-items: center; justify-content: space-between; background: var(--orange); padding: 0.7rem 2.5rem; box-shadow: 0 2px 24px rgba(0,0,0,0.16); }
+    .header-left { display: flex; align-items: center; gap: 0.85rem; }
+    .logo-img { width: 42px; height: 42px; border-radius: 10px; object-fit: cover; border: 2px solid rgba(255,255,255,0.3); }
+    .logo-title { font-family: 'Poppins', sans-serif; font-size: 1.55rem; font-weight: 800; color: #fff; letter-spacing: 2px; }
+    .main-nav { display: flex; align-items: center; gap: 0; }
+    .main-nav a, .dropdown-link { color: rgba(255,255,255,0.92); text-decoration: none; font-weight: 600; font-size: 0.84rem; padding: 0.42rem 0.78rem; border-radius: 8px; border: none; background: none; cursor: pointer; transition: background var(--t); letter-spacing: 0.03em; position: relative; }
+    .main-nav a::after { content: ''; position: absolute; bottom: 3px; left: 0.78rem; right: 0.78rem; height: 2px; background: rgba(255,255,255,0.8); border-radius: 1px; transform: scaleX(0); transform-origin: center; transition: transform var(--t); }
+    .main-nav a:hover { background: rgba(255,255,255,0.14); color: #fff; }
+    .main-nav a:hover::after { transform: scaleX(1); }
+    .dropdown-link:hover { background: rgba(255,255,255,0.14); }
+    .menu-toggle { display: none; background: rgba(255,255,255,0.15); color: #fff; border: 1.5px solid rgba(255,255,255,0.4); padding: 0.4rem 1rem; font-size: 0.84rem; font-weight: 600; border-radius: 8px; cursor: pointer; font-family: inherit; transition: background var(--t); }
+    .menu-toggle:hover { background: rgba(255,255,255,0.25); }
+    .dropdown { position: relative; }
+    .dropdown-link::after { content: " ▾"; font-size: 0.72rem; font-weight: 400; }
+    .main-nav a.dropdown-link::after { position: static; height: auto; transform: none; background: none; }
+    .dropdown-content { display: none; position: absolute; top: calc(100% + 10px); left: 0; background: #fff; min-width: 178px; box-shadow: 0 8px 32px rgba(0,0,0,0.14); z-index: 999; border-radius: 12px; overflow: hidden; border: 1px solid rgba(216,85,40,0.1); }
+    .dropdown-content a { color: var(--orange); padding: 0.8em 1.1em; text-decoration: none; display: block; font-size: 0.86rem; font-weight: 600; border-bottom: 1px solid var(--light); background: #fff; transition: background var(--t); }
+    .dropdown-content a::after { display: none !important; }
+    .dropdown-content a:last-child { border-bottom: none; }
+    .dropdown-content a:hover { background: var(--light); }
+    .dropdown.active .dropdown-content { display: block; }
+    @media (max-width: 800px) {
+      .site-header { padding: 0.6rem 1.2rem; flex-wrap: wrap; }
+      .menu-toggle { display: inline-block; }
+      .main-nav { display: none; flex-direction: column; align-items: stretch; width: 100%; background: var(--orange); padding: 0.5rem 0; border-top: 1px solid rgba(255,255,255,0.15); }
+      .main-nav.open { display: flex; }
+      .main-nav a, .dropdown-link { font-size: 0.92rem; padding: 0.65rem 1.2rem; border-radius: 0; }
+      .main-nav a::after { display: none; }
+      .logo-title { font-size: 1.3rem; }
+      .logo-img { width: 34px; height: 34px; }
     }
 
-    .menu-toggle {
-      display:inline-block;
-      background-color:#f4e7d9;
-      color:#4b2a16;
-      border:1px solid #4b2a16;
-      padding:6px 10px;
-      font-size:14px;
-      border-radius:4px;
-      cursor:pointer;
+    /* HERO */
+    .page-hero { min-height: 380px; background: url('https://images.unsplash.com/photo-1465101178521-cbcce08244fc?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat; display: flex; align-items: center; justify-content: center; position: relative; }
+    .page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(28,13,5,0.80) 0%, rgba(216,85,40,0.62) 100%); }
+    .page-hero-content { position: relative; z-index: 2; text-align: center; max-width: 780px; padding: 5rem 2rem 3.5rem; }
+    .page-hero-tag { display: inline-block; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.28); padding: 0.35em 1em; border-radius: 50px; margin-bottom: 1rem; }
+    .page-hero-h1 { font-family: 'Poppins', sans-serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900; color: #fff; line-height: 1.1; margin-bottom: 1rem; }
+    .page-hero-desc { font-size: clamp(1rem, 1.8vw, 1.15rem); color: rgba(255,255,255,0.88); font-weight: 500; line-height: 1.75; max-width: 680px; margin: 0 auto; }
+
+    /* CARDS */
+    .cards-section { padding: 5rem 2rem 6rem; }
+    .cards-inner { max-width: 1120px; margin: 0 auto; }
+    .cards-header { text-align: center; margin-bottom: 3.5rem; }
+    .section-label { display: inline-block; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--orange); background: var(--light); padding: 0.35em 1em; border-radius: 50px; margin-bottom: 0.8rem; }
+    .section-h2 { font-family: 'Poppins', sans-serif; font-size: clamp(1.7rem, 3vw, 2.5rem); font-weight: 800; color: var(--dark); line-height: 1.15; }
+    .cards-grid { display: flex; flex-wrap: wrap; gap: 1.8rem; justify-content: center; }
+    .role-card {
+      background: #fff; border-radius: 20px;
+      box-shadow: 0 4px 24px rgba(216,85,40,0.07);
+      border: 1px solid rgba(216,85,40,0.07);
+      max-width: 340px; min-width: 250px; flex: 1 1 270px;
+      display: flex; flex-direction: column; overflow: hidden;
+      transition: transform var(--t), box-shadow var(--t);
+      cursor: default;
     }
-
-    .main-nav {
-      display:none;
-      flex-direction:column;
-      gap:10px;
-      background-color:#d85528;
-      padding:10px 20px;
-      margin-top:10px;
+    .role-card:hover { transform: translateY(-7px); box-shadow: 0 16px 48px rgba(216,85,40,0.16); }
+    .role-card-img-wrap { height: 190px; overflow: hidden; }
+    .role-card-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+    .role-card:hover .role-card-img { transform: scale(1.05); }
+    .role-card-body { padding: 1.6rem 1.5rem 1.8rem; flex: 1; display: flex; flex-direction: column; }
+    .role-card-title { font-family: 'Poppins', sans-serif; font-size: 1.08rem; font-weight: 800; color: var(--orange); margin-bottom: 0.55em; line-height: 1.3; }
+    .role-card-desc { font-size: 0.93rem; color: #5a2e1a; font-weight: 500; line-height: 1.68; flex: 1; margin-bottom: 1.4rem; }
+    .role-card-btn {
+      display: inline-block; background: var(--orange); color: #fff;
+      padding: 0.68em 1.5em; border-radius: 50px; font-family: inherit;
+      font-weight: 700; font-size: 0.86rem; text-decoration: none;
+      transition: background var(--t), transform var(--t), box-shadow var(--t);
+      box-shadow: 0 3px 14px rgba(216,85,40,0.25); align-self: flex-start;
     }
+    .role-card-btn:hover { background: var(--coral); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(216,85,40,0.35); }
 
-    .main-nav.open {
-      display:flex;
-    }
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal.d1 { transition-delay: 0.07s; } .reveal.d2 { transition-delay: 0.14s; } .reveal.d3 { transition-delay: 0.21s; } .reveal.d4 { transition-delay: 0.28s; } .reveal.d5 { transition-delay: 0.35s; } .reveal.d6 { transition-delay: 0.42s; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
 
-    .main-nav a {
-      color:#4b2a16;
-    }
-
-    .logo-title {font-size:1.5rem;}
-    .logo-img {width:38px;height:38px;}
-  }
-
-  /* GET INVOLVED HERO & CARDS */
-  .gi-hero-section {
-    position:relative;
-    min-height:220px;
-    width:100vw;
-    left:50%;
-    right:50%;
-    margin-left:-50vw;
-    margin-right:-50vw;
-    background:url('https://images.unsplash.com/photo-1465101178521-cbcce08244fc?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-  }
-  .gi-hero-overlay {
-    background:rgba(216,85,40,0.78);
-    position:absolute;
-    top:0; left:0; width:100%; height:100%; z-index:2;
-    display:flex; align-items:center; justify-content:center;
-  }
-  .gi-hero-content {
-    position:relative; z-index:3; width:100%; text-align:center; padding:4.6em 1.2em 1.5em 1.2em;
-  }
-  .gi-hero-heading {
-    font-size:3rem; color:var(--uvfa-white); font-weight:900; letter-spacing:.03em; margin-bottom:0.24em;
-  }
-  .gi-hero-desc {
-    color:var(--uvfa-white); font-size:1.2rem; font-weight:500; margin-top:.6em; margin-bottom:0; letter-spacing:.02em; max-width:650px; margin-left:auto; margin-right:auto;
-  }
-
-  .gi-main {
-    max-width:1100px; margin:0 auto; padding:3rem 1.2rem 3rem 1.2rem;
-  }
-  .gi-cards {
-    display:flex; flex-wrap:wrap; gap:2.8em; justify-content:center; align-items:stretch; margin-top:2.4em;
-  }
-  .gi-card {
-    background:var(--uvfa-light);
-    border-radius:18px;
-    box-shadow:0 2px 18px rgba(216,85,40,0.06);
-    max-width:350px; min-width:240px; flex:1 1 220px;
-    display:flex; flex-direction:column; align-items:center; padding:2.2em 1.6em;
-    transition:box-shadow 0.16s;
-  }
-  .gi-card:hover {box-shadow:0 6px 24px rgba(216,85,40,0.16);}
-  .gi-card-img {
-    width:83px; height:83px; object-fit:cover; border-radius:50%; margin-bottom:1.1em; background:var(--uvfa-beige);
-    border:3px solid var(--uvfa-orange); box-shadow:0 2px 10px rgba(216,85,40,0.08);
-  }
-  .gi-card-title {
-    font-size:1.34rem; font-weight:900; color:var(--uvfa-orange); margin-bottom:0.5em; text-align:center;
-  }
-  .gi-card-desc {
-    font-size:1.11rem; color:#432114; font-weight:500; margin-bottom:1.23em; text-align:center;
-  }
-  .gi-card-btn {
-    background:var(--uvfa-orange); color:var(--uvfa-white); border:none; font-size:1.07rem; border-radius:20px;
-    font-family:inherit; padding:0.7em 1.7em; font-weight:700; text-decoration:none; cursor:pointer; transition:background 0.14s; margin-top:.4em;
-  }
-  .gi-card-btn:hover {background:var(--uvfa-coral);}
-  @media(max-width:950px){
-    .gi-cards{gap:1.2em;}
-    .gi-card{max-width:96vw;}
-  }
-
-  footer {
-    background:var(--uvfa-light); color:var(--uvfa-orange);
-    padding:2.2rem 0 1.3rem 0; text-align:center;
-    font-size:1.18rem; margin-top:4em;
-  }
-  .footer-social {
-    margin:1.2em 0 1em 0; display:flex; justify-content:center; gap:2.2rem;
-  }
-  .footer-social a {
-    font-size:2.5rem; color:var(--uvfa-coral); text-decoration:none; transition:color 0.2s; display:inline-block; vertical-align:middle;
-  }
-  .footer-social a:hover{color:var(--uvfa-orange);}
-  .footer-contact{
-    color:var(--uvfa-beige); font-weight:700; font-size:1.19rem; text-decoration:none; cursor:pointer; border-bottom:1px dotted var(--uvfa-beige); transition:color 0.2s;
-  }
-  .footer-note{
-    font-size:1.13rem; color:#68422d; opacity:.85; margin-top:1.2em;
-  }
-</style>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var dropdown = document.querySelector('.dropdown');
-      var link = document.querySelector('.dropdown-link');
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        dropdown.classList.toggle('active');
-        document.addEventListener('click', function handler(event) {
-          if (!dropdown.contains(event.target)) {
-            dropdown.classList.remove('active');
-            document.removeEventListener('click', handler);
-          }
-        });
-      });
-    });
-  </script>
+    footer { background: var(--dark-bg); padding: 4rem 2rem 2.5rem; text-align: center; }
+    .footer-inner { max-width: 600px; margin: 0 auto; }
+    .footer-brand { display: flex; align-items: center; justify-content: center; gap: 0.8rem; margin-bottom: 1rem; }
+    .footer-brand-img { width: 42px; height: 42px; border-radius: 9px; object-fit: cover; opacity: 0.85; }
+    .footer-brand-name { font-family: 'Poppins', sans-serif; font-size: 1.3rem; font-weight: 800; color: rgba(255,255,255,0.88); letter-spacing: 2px; }
+    .footer-email { color: var(--light); font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: color var(--t); }
+    .footer-email:hover { color: #fff; }
+    .footer-divider { width: 40px; height: 2px; background: rgba(255,255,255,0.1); border-radius: 1px; margin: 1.4rem auto; }
+    .footer-social { display: flex; justify-content: center; gap: 0.7rem; margin: 0.6rem 0; }
+    .footer-social a { width: 44px; height: 44px; background: rgba(255,255,255,0.07); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.15rem; color: var(--light); text-decoration: none; border: 1px solid rgba(255,255,255,0.08); transition: background var(--t), color var(--t), transform var(--t); }
+    .footer-social a:hover { background: var(--orange); color: #fff; transform: translateY(-3px); }
+    .footer-note { font-size: 0.76rem; color: rgba(255,255,255,0.28); margin-top: 1.8rem; line-height: 1.6; }
+  </style>
 </head>
 <body>
   <header class="site-header">
-  <div class="logo">UVFA</div>
+    <div class="header-left">
+      <img src="images/uvfa_logo_beige.png" class="logo-img" alt="UVFA Logo">
+      <span class="logo-title">UVFA</span>
+    </div>
+    <button class="menu-toggle" aria-label="Toggle navigation">☰ Menu</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <div class="dropdown" id="aboutDropdown">
+        <button class="dropdown-link">About Us</button>
+        <div class="dropdown-content">
+          <a href="about.html#story">Our Story</a>
+          <a href="about.html#board">Our Board</a>
+        </div>
+      </div>
+      <a href="initiatives.html">Our Initiatives</a>
+      <a href="blog.html">Tales of Tails</a>
+      <a href="involved.html">Get Involved</a>
+      <a href="donate.html">Donate</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-  <!-- Mobile menu button -->
-  <button class="menu-toggle" aria-label="Toggle navigation">
-    ☰ Menu
-  </button>
+  <section class="page-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <div class="page-hero-tag">Take Action</div>
+      <h1 class="page-hero-h1">Get Involved</h1>
+      <p class="page-hero-desc">At UVFA, every student and animal lover can make a difference. Here's how you can help us create change for animals in your community and around the world!</p>
+    </div>
+  </section>
 
-  <!-- Your existing nav links -->
-  <nav class="main-nav">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="get-involved.html">Get Involved</a>
-    <a href="blog.html">Blog</a>
-    <a href="donate.html">Donate</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-
-  <section class="gi-hero-section">
-    <div class="gi-hero-overlay"></div>
-    <div class="gi-hero-content">
-      <div class="gi-hero-heading">Get Involved</div>
-      <div class="gi-hero-desc">
-        At UVFA, every student and animal lover can make a difference. Here’s how you can help us create change for animals in your community and around the world!
+  <section class="cards-section">
+    <div class="cards-inner">
+      <div class="cards-header reveal">
+        <div class="section-label">Ways to Contribute</div>
+        <h2 class="section-h2">Find your role</h2>
+      </div>
+      <div class="cards-grid">
+        <div class="role-card reveal d1">
+          <div class="role-card-img-wrap">
+            <img class="role-card-img" src="images/become_city.jpg" alt="City Lead">
+          </div>
+          <div class="role-card-body">
+            <div class="role-card-title">Become a City/State Lead</div>
+            <div class="role-card-desc">Start a local chapter, lead new projects, and grow UVFA in your region. We'll help you every step of the way!</div>
+            <a href="posters/city-lead.pdf" class="role-card-btn">Requirements &amp; Application</a>
+          </div>
+        </div>
+        <div class="role-card reveal d2">
+          <div class="role-card-img-wrap">
+            <img class="role-card-img" src="images/project.jpg" alt="Kindness Curriculum">
+          </div>
+          <div class="role-card-body">
+            <div class="role-card-title">Join the Kindness Curriculum</div>
+            <div class="role-card-desc">Join our team and help raise awareness through educational outreach in your community!</div>
+            <a href="posters/kindness.pdf" class="role-card-btn">Requirements &amp; Application</a>
+          </div>
+        </div>
+        <div class="role-card reveal d3" id="become-author">
+          <div class="role-card-img-wrap">
+            <img class="role-card-img" src="images/volunteer_author.jpg" alt="Author">
+          </div>
+          <div class="role-card-body">
+            <div class="role-card-title">Volunteer as Author</div>
+            <div class="role-card-desc">Love to write? Join our Tales of Tails blog as an author and help us spread education, news, and hope.</div>
+            <a href="posters/authors.pdf" class="role-card-btn">Requirements &amp; Application</a>
+          </div>
+        </div>
+        <div class="role-card reveal d4" id="project-lead">
+          <div class="role-card-img-wrap">
+            <img class="role-card-img" src="images/project_lead.jpg" alt="Project Lead">
+          </div>
+          <div class="role-card-body">
+            <div class="role-card-title">Become a Project Lead</div>
+            <div class="role-card-desc">Are you passionate about animal welfare and leadership? We're looking for motivated Project Leads to oversee our Kindness Curriculum and Awareness Blog. Join us to guide student teams, create positive change, and launch creative projects!</div>
+            <a href="posters/project.pdf" class="role-card-btn">Requirements &amp; Application</a>
+          </div>
+        </div>
+        <div class="role-card reveal d5">
+          <div class="role-card-img-wrap">
+            <img class="role-card-img" src="images/fundraise.jpg" alt="Fundraise">
+          </div>
+          <div class="role-card-body">
+            <div class="role-card-title">Fundraise or Donate</div>
+            <div class="role-card-desc">Support us financially—donate, set up a fundraiser, or help with campaigns. Every gift directly helps animals!</div>
+            <a href="donate.html" class="role-card-btn">Donate Now</a>
+          </div>
+        </div>
+        <div class="role-card reveal d6">
+          <div class="role-card-img-wrap">
+            <img class="role-card-img" src="images/become_ambassador.jpg" alt="Ambassador">
+          </div>
+          <div class="role-card-body">
+            <div class="role-card-title">Become an Ambassador</div>
+            <div class="role-card-desc">Represent UVFA and animal welfare in your school, city, or online! Ambassadors inspire others, educate, and advocate for the cause everywhere—from social media to classrooms.</div>
+            <a href="posters/ambassador.pdf" class="role-card-btn">Requirements &amp; Application</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <main class="gi-main">
-    <div class="gi-cards">
-      <div class="gi-card">
-        <img class="gi-card-img" src="images/become_city.jpg" alt="Chapter">
-        <div class="gi-card-title">Become a City/State Lead</div>
-        <div class="gi-card-desc">
-          Start a local chapter, lead new projects, and grow UVFA in your region. We’ll help you every step of the way!
-        </div>
-        <a href="posters/city-lead.pdf" class="gi-card-btn">Requirements and Application Form</a>
-      </div>
-      <div class="gi-card">
-        <img class="gi-card-img" src="images/project.jpg" alt="Volunteer">
-        <div class="gi-card-title">Join the Kindness Curriculum</div>
-        <div class="gi-card-desc">
-          Join our team and help raise awareness through educational outreach in your community!
-        </div>
-        <a href="posters/kindness.pdf" class="gi-card-btn">Requirements and Application Form</a>
-      </div>
-      <div class="gi-card" id=become-author>
-        <img class="gi-card-img" src="images/volunteer_author.jpg" alt="Write">
-        <div class="gi-card-title">Volunteer as Author</div>
-        <div class="gi-card-desc">
-          Love to write? Join our Tales of Tails blog as an author and help us spread education, news, and hope.
-        </div>
-        <a href="posters/authors.pdf" class="gi-card-btn">Requirements and Application Form</a>
-      </div>
-<div class="gi-card" id="project-lead">
-  <img class="gi-card-img" src="images/project_lead.jpg" alt="Project Lead">
-  <div class="gi-card-title">Become a Project Lead</div>
-  <div class="gi-card-desc">
-    Are you passionate about animal welfare and leadership? We're looking for motivated Project Leads to oversee our Kindness Curriculum and Awareness Blog. Join us to guide student teams, create positive change, and launch creative projects!
-  </div>
-  <a href="posters/project.pdf" class="gi-card-btn">Requirements and Application Form</a>
-</div>
-      <div class="gi-card">
-        <img class="gi-card-img" src="images/fundraise.jpg" alt="Fundraise">
-        <div class="gi-card-title">Fundraise or Donate</div>
-        <div class="gi-card-desc">
-          Support us financially—donate, set up a fundraiser, or help with campaigns. Every gift directly helps animals!
-        </div>
-        <a href="donate.html" class="gi-card-btn">Donate Now</a>
-      </div>
-      <div class="gi-card">
-        <img class="gi-card-img" src="images/become_ambassador.jpg" alt="Ambassador">
-        <div class="gi-card-title">Become an Ambassador</div>
-        <div class="gi-card-desc">
-          Represent UVFA and animal welfare in your school, city, or online! Ambassadors inspire others, educate, and advocate for the cause everywhere—from social media to classrooms.
-        </div>
-        <a href="posters/ambassador.pdf" class="gi-card-btn">Requirements and Application Form</a>
-      </div>
-    </div>
-  </main>
   <footer>
-    <div>
-      <a href="mailto:uvfa.org@gmail.com" class="footer-contact">uvfa.org@gmail.com</a>
-      <div class="footer-social">
-        <a href="https://www.tiktok.com/@uvfa.org?_t=ZP-8zBRIlVw0n0&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
-        <a href="https://www.instagram.com/uvfa_org/profilecard/?igsh=Zzl1cHRxMmppaWp4" target="_blank"><i class="fab fa-instagram"></i></a>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/uvfa_logo_beige.png" class="footer-brand-img" alt="UVFA Logo">
+        <span class="footer-brand-name">UVFA</span>
       </div>
-    </div>
-    <div class="footer-note">
-      United Voices for Animals is a registered 501(c)(3) non profit under Hack Club Bank
+      <a href="mailto:uvfa.org@gmail.com" class="footer-email">uvfa.org@gmail.com</a>
+      <div class="footer-divider"></div>
+      <div class="footer-social">
+        <a href="https://www.tiktok.com/@uvfa.org?_t=ZP-8zBRIlVw0n0&_r=1" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/uvfa_org/profilecard/?igsh=Zzl1cHRxMmppaWp4" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="footer-note">United Voices for Animals is a registered 501(c)(3) non profit under Hack Club Bank</div>
     </div>
   </footer>
-<script>
-  const menuBtn = document.querySelector('.menu-toggle');
-  const mainNav = document.querySelector('.main-nav');
 
-  menuBtn.addEventListener('click', () => {
-    mainNav.classList.toggle('open');
-  });
-</script>
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', () => { document.getElementById('mainNav').classList.toggle('open'); });
+    const dd = document.getElementById('aboutDropdown');
+    dd.querySelector('.dropdown-link').addEventListener('click', e => {
+      e.preventDefault(); dd.classList.toggle('active');
+      document.addEventListener('click', function h(ev) { if (!dd.contains(ev.target)) { dd.classList.remove('active'); document.removeEventListener('click', h); } });
+    });
+    const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }); }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
 </body>
 </html>
