@@ -36,8 +36,8 @@
     .main-nav a:hover { background: rgba(255,255,255,0.14); color: #fff; }
     .main-nav a:hover::after { transform: scaleX(1); }
     .dropdown-link:hover { background: rgba(255,255,255,0.14); }
-    .main-nav a.active { background: rgba(255,255,255,0.22) !important; color: #fff !important; }
-    .main-nav a.active::after { transform: scaleX(1) !important; }
+    .main-nav a.active, .dropdown-link.active { background: rgba(255,255,255,0.28) !important; color: #fff !important; }
+    .main-nav a.active::after { transform: scaleX(1) !important; height: 2.5px !important; background: #fff !important; }
     .menu-toggle { display: none; background: rgba(255,255,255,0.15); color: #fff; border: 1.5px solid rgba(255,255,255,0.4); padding: 0.4rem 1rem; font-size: 0.84rem; font-weight: 600; border-radius: 8px; cursor: pointer; font-family: inherit; transition: background var(--t); }
     .menu-toggle:hover { background: rgba(255,255,255,0.25); }
     .dropdown { position: relative; }
@@ -108,11 +108,18 @@
     .initiative-img-wrap { flex: 0 0 340px; height: 240px; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 24px rgba(0,0,0,0.1); }
     .initiative-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; display: block; }
     .initiative-card:hover .initiative-img-wrap img { transform: scale(1.04); }
-    .initiative-text { flex: 1; min-width: 240px; }
-    .initiative-num { font-family: 'Poppins', sans-serif; font-size: 3rem; font-weight: 900; color: var(--light); line-height: 1; margin-bottom: 0.1em; }
-    .initiative-title { font-family: 'Poppins', sans-serif; font-size: clamp(1.15rem, 2.5vw, 1.5rem); font-weight: 800; color: var(--orange); margin-bottom: 0.7em; line-height: 1.25; }
+    .initiative-text { flex: 1; min-width: 240px; position: relative; overflow: hidden; }
+    .initiative-num {
+      position: absolute; top: -1.2rem; right: -0.8rem;
+      font-family: 'Poppins', sans-serif; font-size: 9rem; font-weight: 900;
+      color: rgba(216,85,40,0.06); line-height: 1;
+      pointer-events: none; user-select: none; z-index: 0;
+    }
+    .initiative-card.featured .initiative-num { color: rgba(255,255,255,0.1); }
+    .initiative-title { font-family: 'Poppins', sans-serif; font-size: clamp(1.15rem, 2.5vw, 1.5rem); font-weight: 800; color: var(--orange); margin-bottom: 0.7em; line-height: 1.25; position: relative; z-index: 1; }
     .initiative-card:nth-child(even) .initiative-title { color: var(--coral); }
-    .initiative-desc { font-size: 1.02rem; color: #5a2e1a; font-weight: 500; line-height: 1.78; }
+    .initiative-card.featured .initiative-title { color: #fff; }
+    .initiative-desc { font-size: 1.02rem; color: #5a2e1a; font-weight: 500; line-height: 1.78; position: relative; z-index: 1; }
 
     @media (max-width: 900px) {
       .initiative-card, .initiative-card:nth-child(even) { flex-direction: column !important; padding: 2rem 1.5rem; }
@@ -256,6 +263,8 @@
     });
     const pg = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.main-nav a[href]').forEach(a => { if (a.getAttribute('href') === pg) a.classList.add('active'); });
+    if (pg === 'about.html') document.querySelector('#aboutDropdown .dropdown-link')?.classList.add('active');
+    document.querySelectorAll('.main-nav a').forEach(a => a.addEventListener('click', () => document.getElementById('mainNav').classList.remove('open')));
     const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }); }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   </script>

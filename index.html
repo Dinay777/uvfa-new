@@ -61,8 +61,8 @@
     .main-nav a:hover { background: rgba(255,255,255,0.14); color: #fff; }
     .main-nav a:hover::after { transform: scaleX(1); }
     .dropdown-link:hover { background: rgba(255,255,255,0.14); color: #fff; }
-    .main-nav a.active { background: rgba(255,255,255,0.22) !important; color: #fff !important; }
-    .main-nav a.active::after { transform: scaleX(1) !important; }
+    .main-nav a.active, .dropdown-link.active { background: rgba(255,255,255,0.28) !important; color: #fff !important; }
+    .main-nav a.active::after { transform: scaleX(1) !important; height: 2.5px !important; background: #fff !important; }
     .menu-toggle {
       display: none; background: rgba(255,255,255,0.15); color: #fff;
       border: 1.5px solid rgba(255,255,255,0.4); padding: 0.4rem 1rem;
@@ -113,7 +113,12 @@
     }
     .hero-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(28,13,5,0.72) 0%, rgba(216,85,40,0.55) 100%);
+      background: linear-gradient(135deg, rgba(28,13,5,0.82) 0%, rgba(216,85,40,0.52) 55%, rgba(28,13,5,0.65) 100%);
+    }
+    .hero::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse 80% 60% at 50% 70%, rgba(216,85,40,0.18) 0%, transparent 70%);
+      z-index: 1;
     }
     .hero-content {
       position: relative; z-index: 2; text-align: center;
@@ -161,7 +166,16 @@
     }
     @keyframes fadeDown { from { opacity: 0; transform: translateY(-18px); } to { opacity: 1; transform: none; } }
     @keyframes bounce { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
-    @media (max-width: 600px) { .hero { min-height: 88vh; } }
+    @media (max-width: 600px) {
+      .hero { min-height: 88vh; background-position: 60% center; }
+      .hero-content { padding: 1.5rem 1.2rem 5rem; }
+      .hero-h1 { font-size: 1.95rem; }
+      .hero-desc { font-size: 0.95rem; }
+      .hero-btns .btn { padding: 0.75em 1.6em; font-size: 0.88rem; }
+      .stats-section { padding: 3rem 1rem; }
+      .stat-card { padding: 2rem 1rem; }
+      .cta-section { padding: 4rem 1.2rem; }
+    }
 
     /* ─── STATS ─── */
     .stats-section { background: #fff; padding: 5rem 2rem; }
@@ -372,24 +386,6 @@
           <div class="help-desc">Volunteer with UVFA in one of our current projects! From helping animals directly, to educational outreach, UVFA values every input.</div>
         </div>
       </div>
-      <div class="help-row">
-        <div class="help-img-wrap reveal from-left">
-          <img src="images/author.jpg" alt="Volunteer as Author">
-        </div>
-        <div class="help-text reveal from-right">
-          <div class="help-title">Volunteer as Author for Our Awareness Blog</div>
-          <div class="help-desc">Volunteer remotely by writing articles for "Tales of Tails" our awareness journal.</div>
-        </div>
-      </div>
-      <div class="help-row">
-        <div class="help-img-wrap reveal from-right">
-          <img src="images/donate.jpg" alt="Donate">
-        </div>
-        <div class="help-text reveal from-left">
-          <div class="help-title">Donate</div>
-          <div class="help-desc">Support UVFA efforts financially and help expand our impact across the globe.</div>
-        </div>
-      </div>
       <div style="text-align:center; margin-top: 3rem;" class="reveal">
         <a href="involved.html" class="btn btn-primary" style="font-size:1rem; padding: 0.85rem 2.2rem;">See all ways to get involved &rarr;</a>
       </div>
@@ -447,6 +443,9 @@
     // Active nav
     const pg = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.main-nav a[href]').forEach(a => { if (a.getAttribute('href') === pg) a.classList.add('active'); });
+    if (pg === 'about.html') document.querySelector('#aboutDropdown .dropdown-link')?.classList.add('active');
+    // Close mobile nav on link tap
+    document.querySelectorAll('.main-nav a').forEach(a => a.addEventListener('click', () => document.getElementById('mainNav').classList.remove('open')));
 
     // Scroll reveal
     const io = new IntersectionObserver(entries => {

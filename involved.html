@@ -30,8 +30,8 @@
     .main-nav a:hover { background: rgba(255,255,255,0.14); color: #fff; }
     .main-nav a:hover::after { transform: scaleX(1); }
     .dropdown-link:hover { background: rgba(255,255,255,0.14); }
-    .main-nav a.active { background: rgba(255,255,255,0.22) !important; color: #fff !important; }
-    .main-nav a.active::after { transform: scaleX(1) !important; }
+    .main-nav a.active, .dropdown-link.active { background: rgba(255,255,255,0.28) !important; color: #fff !important; }
+    .main-nav a.active::after { transform: scaleX(1) !important; height: 2.5px !important; background: #fff !important; }
     .menu-toggle { display: none; background: rgba(255,255,255,0.15); color: #fff; border: 1.5px solid rgba(255,255,255,0.4); padding: 0.4rem 1rem; font-size: 0.84rem; font-weight: 600; border-radius: 8px; cursor: pointer; font-family: inherit; transition: background var(--t); }
     .menu-toggle:hover { background: rgba(255,255,255,0.25); }
     .dropdown { position: relative; }
@@ -243,6 +243,8 @@
     });
     const pg = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.main-nav a[href]').forEach(a => { if (a.getAttribute('href') === pg) a.classList.add('active'); });
+    if (pg === 'about.html') document.querySelector('#aboutDropdown .dropdown-link')?.classList.add('active');
+    document.querySelectorAll('.main-nav a').forEach(a => a.addEventListener('click', () => document.getElementById('mainNav').classList.remove('open')));
     const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }); }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   </script>
