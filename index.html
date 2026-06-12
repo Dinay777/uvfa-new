@@ -14,6 +14,7 @@
   <meta property="og:type" content="website">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="icon" href="images/uvfa_logo_beige.png" type="image/png">
   <style>
     :root {
       --orange: #d85528;
@@ -60,6 +61,8 @@
     .main-nav a:hover { background: rgba(255,255,255,0.14); color: #fff; }
     .main-nav a:hover::after { transform: scaleX(1); }
     .dropdown-link:hover { background: rgba(255,255,255,0.14); color: #fff; }
+    .main-nav a.active { background: rgba(255,255,255,0.22) !important; color: #fff !important; }
+    .main-nav a.active::after { transform: scaleX(1) !important; }
     .menu-toggle {
       display: none; background: rgba(255,255,255,0.15); color: #fff;
       border: 1.5px solid rgba(255,255,255,0.4); padding: 0.4rem 1rem;
@@ -158,6 +161,7 @@
     }
     @keyframes fadeDown { from { opacity: 0; transform: translateY(-18px); } to { opacity: 1; transform: none; } }
     @keyframes bounce { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
+    @media (max-width: 600px) { .hero { min-height: 88vh; } }
 
     /* ─── STATS ─── */
     .stats-section { background: #fff; padding: 5rem 2rem; }
@@ -244,6 +248,25 @@
     .reveal.d2 { transition-delay: 0.16s; }
     .reveal.d3 { transition-delay: 0.24s; }
     @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+    /* ─── CTA ─── */
+    .cta-section {
+      background: var(--orange); padding: 6rem 2rem;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(28,13,5,0.28) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .cta-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+    .cta-h2 { font-family: 'Poppins', sans-serif; font-size: clamp(1.9rem, 4vw, 3rem); font-weight: 900; color: #fff; line-height: 1.1; margin-bottom: 0.8rem; }
+    .cta-desc { font-size: 1.1rem; color: rgba(255,255,255,0.88); font-weight: 500; line-height: 1.72; margin-bottom: 2.2rem; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-white { background: #fff; color: var(--orange); box-shadow: 0 4px 22px rgba(0,0,0,0.2); }
+    .btn-white:hover { background: var(--cream); box-shadow: 0 8px 32px rgba(0,0,0,0.28); }
+    .btn-outline-white { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.7); }
+    .btn-outline-white:hover { background: rgba(255,255,255,0.14); }
 
     /* ─── FOOTER ─── */
     footer { background: var(--dark-bg); padding: 4rem 2rem 2.5rem; text-align: center; }
@@ -367,6 +390,20 @@
           <div class="help-desc">Support UVFA efforts financially and help expand our impact across the globe.</div>
         </div>
       </div>
+      <div style="text-align:center; margin-top: 3rem;" class="reveal">
+        <a href="involved.html" class="btn btn-primary" style="font-size:1rem; padding: 0.85rem 2.2rem;">See all ways to get involved &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section reveal">
+    <div class="cta-inner">
+      <h2 class="cta-h2">Every voice counts. Every action matters.</h2>
+      <p class="cta-desc">Join a community of young advocates making real change for animals around the world. There's a place for everyone at UVFA.</p>
+      <div class="cta-btns">
+        <a href="involved.html" class="btn btn-white" style="font-weight:800; border-radius: 50px; padding: 0.85rem 2.2rem;">Get Involved</a>
+        <a href="donate.html" class="btn btn-outline-white" style="font-weight:700; border-radius: 50px; padding: 0.85rem 2.2rem;">Donate</a>
+      </div>
     </div>
   </section>
 
@@ -406,6 +443,10 @@
         if (!dd.contains(ev.target)) { dd.classList.remove('active'); document.removeEventListener('click', h); }
       });
     });
+
+    // Active nav
+    const pg = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.main-nav a[href]').forEach(a => { if (a.getAttribute('href') === pg) a.classList.add('active'); });
 
     // Scroll reveal
     const io = new IntersectionObserver(entries => {

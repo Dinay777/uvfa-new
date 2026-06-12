@@ -14,6 +14,7 @@
   <meta property="og:type" content="website">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="icon" href="images/uvfa_logo_beige.png" type="image/png">
   <style>
     :root { --orange: #d85528; --coral: #e67a62; --beige: #dfa493; --light: #fad6c6; --cream: #fdf9ee; --dark: #2e1709; --dark-bg: #1c0d05; --radius: 16px; --t: 0.28s cubic-bezier(.4,0,.2,1); }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -29,6 +30,8 @@
     .main-nav a:hover { background: rgba(255,255,255,0.14); color: #fff; }
     .main-nav a:hover::after { transform: scaleX(1); }
     .dropdown-link:hover { background: rgba(255,255,255,0.14); }
+    .main-nav a.active { background: rgba(255,255,255,0.22) !important; color: #fff !important; }
+    .main-nav a.active::after { transform: scaleX(1) !important; }
     .menu-toggle { display: none; background: rgba(255,255,255,0.15); color: #fff; border: 1.5px solid rgba(255,255,255,0.4); padding: 0.4rem 1rem; font-size: 0.84rem; font-weight: 600; border-radius: 8px; cursor: pointer; font-family: inherit; transition: background var(--t); }
     .menu-toggle:hover { background: rgba(255,255,255,0.25); }
     .dropdown { position: relative; }
@@ -209,6 +212,8 @@
       e.preventDefault(); dd.classList.toggle('active');
       document.addEventListener('click', function h(ev) { if (!dd.contains(ev.target)) { dd.classList.remove('active'); document.removeEventListener('click', h); } });
     });
+    const pg = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.main-nav a[href]').forEach(a => { if (a.getAttribute('href') === pg) a.classList.add('active'); });
     const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }); }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   </script>

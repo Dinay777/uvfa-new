@@ -14,6 +14,7 @@
   <meta property="og:type" content="website">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="icon" href="images/uvfa_logo_beige.png" type="image/png">
   <style>
     :root {
       --orange: #d85528; --coral: #e67a62; --beige: #dfa493;
@@ -49,6 +50,8 @@
     .main-nav a:hover { background: rgba(255,255,255,0.14); color: #fff; }
     .main-nav a:hover::after { transform: scaleX(1); }
     .dropdown-link:hover { background: rgba(255,255,255,0.14); }
+    .main-nav a.active { background: rgba(255,255,255,0.22) !important; color: #fff !important; }
+    .main-nav a.active::after { transform: scaleX(1) !important; }
     .menu-toggle {
       display: none; background: rgba(255,255,255,0.15); color: #fff;
       border: 1.5px solid rgba(255,255,255,0.4); padding: 0.4rem 1rem;
@@ -142,6 +145,7 @@
     }
     .member-card:hover { transform: translateY(-6px); box-shadow: 0 14px 40px rgba(216,85,40,0.16); }
     .member-photo { width: 100px; height: 136px; object-fit: cover; border-radius: 12px; margin-bottom: 1rem; box-shadow: 0 4px 14px rgba(0,0,0,0.1); }
+    .member-initial { width: 100px; height: 136px; border-radius: 12px; margin-bottom: 1rem; background: var(--orange); display: flex; align-items: center; justify-content: center; font-family: 'Poppins', sans-serif; font-size: 2rem; font-weight: 900; color: #fff; letter-spacing: 1px; box-shadow: 0 4px 14px rgba(0,0,0,0.1); }
     .member-name { font-family: 'Poppins', sans-serif; font-size: 0.98rem; font-weight: 700; color: var(--orange); margin-bottom: 0.3em; text-align: center; line-height: 1.3; }
     .member-role { font-size: 0.8rem; color: var(--coral); font-weight: 600; text-align: center; margin-bottom: 0.25em; line-height: 1.35; }
     .member-bio { font-size: 0.8rem; color: #7a4228; font-weight: 500; text-align: center; }
@@ -268,7 +272,7 @@
           <div class="member-bio">Jacksonville, FL</div>
         </div>
         <div class="member-card reveal d6">
-          <img src="https://images.unsplash.com/photo-1508214751196-bc4f7d00411f?auto=format&fit=crop&w=300&q=80" class="member-photo" alt="Jalyce Segovia">
+          <div class="member-initial">JS</div>
           <div class="member-name">Jalyce Segovia</div>
           <div class="member-role">Outreach Director</div>
           <div class="member-bio">Port Washington, NY</div>
@@ -300,6 +304,8 @@
       e.preventDefault(); dd.classList.toggle('active');
       document.addEventListener('click', function h(ev) { if (!dd.contains(ev.target)) { dd.classList.remove('active'); document.removeEventListener('click', h); } });
     });
+    const pg = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.main-nav a[href]').forEach(a => { if (a.getAttribute('href') === pg) a.classList.add('active'); });
     const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }); }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   </script>
