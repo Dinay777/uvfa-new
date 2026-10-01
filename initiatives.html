@@ -134,6 +134,19 @@
     .reveal.d1 { transition-delay: 0.1s; } .reveal.d2 { transition-delay: 0.2s; }
     @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
 
+    /* IN ACTION GALLERY */
+    .impact-section { background: #fff; padding: 4rem 2rem 5rem; text-align: center; }
+    .impact-inner { max-width: 1100px; margin: 0 auto; }
+    .impact-desc { font-size: 1.05rem; color: #5a2e1a; font-weight: 500; line-height: 1.75; max-width: 620px; margin: 0 auto 2.5rem; }
+    .impact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; margin-top: 2rem; }
+    .impact-item { border-radius: 14px; overflow: hidden; box-shadow: 0 4px 20px rgba(216,85,40,0.1); background: var(--cream); transition: transform var(--t), box-shadow var(--t); }
+    .impact-item:hover { transform: translateY(-5px); box-shadow: 0 14px 40px rgba(216,85,40,0.18); }
+    .impact-item img { width: 100%; height: 240px; object-fit: cover; display: block; transition: transform 0.5s ease; }
+    .impact-item:hover img { transform: scale(1.04); }
+    .impact-caption { padding: 0.75rem 1rem; font-size: 0.83rem; font-weight: 600; color: #5a2e1a; line-height: 1.45; text-align: left; }
+    @media (max-width: 900px) { .impact-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 500px) { .impact-grid { grid-template-columns: 1fr; } .impact-item img { height: 220px; } }
+
     /* FOOTER */
     footer { background: var(--dark-bg); padding: 4rem 2rem 2.5rem; text-align: center; }
     .footer-inner { max-width: 600px; margin: 0 auto; }
@@ -233,6 +246,32 @@
           <div class="initiative-num">04</div>
           <div class="initiative-title">Ambassador Program</div>
           <div class="initiative-desc">UVFA Ambassadors promote our mission in their schools, cities, or online communities. Ambassadors serve as advocates for animal welfare wherever they are. This role is perfect for students who want to get involved individually or introduce UVFA to their school before starting a full chapter.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="impact-section">
+    <div class="impact-inner">
+      <div class="section-label reveal">September 2026</div>
+      <h2 class="section-h2 reveal">In Action</h2>
+      <p class="impact-desc reveal">Real photos from our recent projects — students making toy donations and adoption cards for local shelters.</p>
+      <div class="impact-grid">
+        <div class="impact-item reveal">
+          <img src="images/project_toys_making.webp" alt="Students cutting t-shirts to make toy donations">
+          <div class="impact-caption">Making 30+ toys from old t-shirts at Morton Ranch High School</div>
+        </div>
+        <div class="impact-item reveal d1">
+          <img src="images/project_volunteers.webp" alt="UVFA volunteers at the project">
+          <div class="impact-caption">Our volunteers ready to create change</div>
+        </div>
+        <div class="impact-item reveal d1">
+          <img src="images/project_adoption_cards.webp" alt="Students holding handmade adoption cards for shelters">
+          <div class="impact-caption">Handmade adoption cards for local shelters</div>
+        </div>
+        <div class="impact-item reveal d2">
+          <img src="images/project_results.webp" alt="Finished toys and adoption cards ready for donation">
+          <div class="impact-caption">Finished toys and cards ready for donation</div>
         </div>
       </div>
     </div>
