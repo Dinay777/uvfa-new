@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adopt Don&#8217;t Shop | Tales of Tails &#8211; UVFA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <style>
+    :root {
+      --orange: #d85528;
+      --coral: #e67a62;
+      --beige: #dfa493;
+      --light: #fad6c6;
+      --cream: #fdf9ee;
+      --dark: #2e1709;
+      --dark-bg: #1c0d05;
+      --t: 0.22s ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--dark); line-height: 1.7; overflow-x: hidden; }
+
+    /* ── NAV ── */
+    .site-header { position: sticky; top: 0; z-index: 900; display: flex; align-items: center; justify-content: space-between; background: var(--orange); padding: 0.7rem 2.5rem; box-shadow: 0 2px 24px rgba(0,0,0,0.16); }
+    .logo-wrap { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
+    .logo-title { font-family: 'Poppins', sans-serif; font-size: 1.55rem; font-weight: 800; color: #fff; letter-spacing: 2px; }
+    .main-nav { display: flex; align-items: center; gap: 0.2rem; }
+    .main-nav a { color: rgba(255,255,255,0.92); text-decoration: none; font-weight: 600; font-size: 0.84rem; padding: 0.42rem 0.78rem; border-radius: 8px; transition: background var(--t); }
+    .main-nav a:hover { background: rgba(255,255,255,0.14); }
+    .main-nav a.active { background: rgba(255,255,255,0.28); }
+    .btn-donate { background: rgba(255,255,255,0.18); border: 1.5px solid rgba(255,255,255,0.5); color: #fff !important; border-radius: 8px; padding: 0.4rem 1rem !important; font-weight: 700 !important; }
+    .btn-donate:hover { background: rgba(255,255,255,0.3) !important; }
+
+    /* ── ARTICLE HERO ── */
+    .article-hero { position: relative; height: 480px; overflow: hidden; }
+    .article-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(28,13,5,0.2) 0%, rgba(28,13,5,0.75) 100%); }
+    .article-hero-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 2.5rem 3rem; max-width: 860px; }
+    .article-badge { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--orange); background: var(--light); padding: 0.3em 1em; border-radius: 50px; margin-bottom: 0.9rem; }
+    .article-hero-title { font-family: 'Poppins', sans-serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; color: #fff; line-height: 1.15; margin-bottom: 0.6rem; }
+    .article-meta { display: flex; align-items: center; gap: 1.2rem; color: rgba(255,255,255,0.75); font-size: 0.84rem; font-weight: 600; }
+    .article-meta span { display: flex; align-items: center; gap: 0.4rem; }
+
+    /* ── ARTICLE BODY ── */
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+    .article-body p { font-size: 1rem; color: #4a2010; font-weight: 500; line-height: 1.85; margin-bottom: 1.6rem; }
+
+    .article-img-wrap { margin: 2.2rem 0; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 32px rgba(46,23,9,0.14); }
+    .article-img-wrap img { width: 100%; display: block; object-fit: cover; max-height: 420px; }
+    .article-img-caption { background: #fff; padding: 0.6rem 1rem; font-size: 0.82rem; color: var(--beige); font-weight: 600; text-align: center; font-style: italic; }
+
+    /* placeholder for missing image */
+    .img-placeholder { background: var(--light); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.6rem; height: 260px; color: var(--beige); }
+    .img-placeholder i { font-size: 2rem; opacity: 0.5; }
+    .img-placeholder span { font-size: 0.8rem; font-weight: 600; opacity: 0.7; }
+
+    .section-divider { display: flex; align-items: center; gap: 1rem; margin: 3rem 0 2rem; }
+    .section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1.5px; background: var(--light); }
+    .section-label { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--orange); background: var(--light); padding: 0.3em 1em; border-radius: 50px; white-space: nowrap; }
+
+    .article-section-title { font-family: 'Poppins', sans-serif; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 900; color: var(--dark); margin-bottom: 1.2rem; line-height: 1.2; }
+
+    .article-highlight-box { background: #fff; border: 1px solid rgba(216,85,40,0.12); border-radius: 16px; padding: 1.6rem 1.8rem; margin: 2rem 0; }
+    .article-highlight-box p { margin-bottom: 0; color: #5a2e1a; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--dark-bg); padding: 4rem 2rem 2.5rem; text-align: center; }
+    .footer-inner { max-width: 600px; margin: 0 auto; }
+    .footer-brand { display: flex; align-items: center; justify-content: center; gap: 0.8rem; margin-bottom: 1rem; }
+    .footer-brand-name { font-family: 'Poppins', sans-serif; font-size: 1.3rem; font-weight: 800; color: rgba(255,255,255,0.88); letter-spacing: 2px; }
+    .footer-email { color: var(--light); font-weight: 600; font-size: 0.95rem; text-decoration: none; }
+    .footer-divider { width: 40px; height: 2px; background: rgba(255,255,255,0.1); border-radius: 1px; margin: 1.4rem auto; }
+    .footer-social { display: flex; justify-content: center; gap: 0.7rem; margin: 0.6rem 0; }
+    .footer-social a { width: 44px; height: 44px; background: rgba(255,255,255,0.07); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.15rem; color: var(--light); text-decoration: none; border: 1px solid rgba(255,255,255,0.08); transition: background var(--t), color var(--t); }
+    .footer-social a:hover { background: var(--orange); color: #fff; }
+    .footer-note { font-size: 0.76rem; color: rgba(255,255,255,0.28); margin-top: 1.8rem; line-height: 1.6; }
+
+    @media (max-width: 640px) {
+      .site-header { padding: 0.6rem 1.2rem; }
+      .main-nav { display: none; }
+      .article-hero { height: 340px; }
+      .article-hero-content { padding: 1.5rem; }
+      .article-wrap { padding: 2.5rem 1.2rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-header">
+    <a class="logo-wrap" href="/">
+      <span class="logo-title">UVFA</span>
+    </a>
+    <nav class="main-nav">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/initiatives">Initiatives</a>
+      <a class="active" href="/blog">Blog</a>
+      <a href="/involved">Get Involved</a>
+      <a class="btn-donate" href="/donate">Donate</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <div class="article-hero" style="background: linear-gradient(135deg, #c44a1f 0%, #2e1709 100%);">
+    <div class="article-hero-overlay"></div>
+    <div class="article-hero-content">
+      <div class="article-badge">Tales of Tails &nbsp;&#183;&nbsp; Chapter 3</div>
+      <h1 class="article-hero-title">Adopt Don&#8217;t Shop</h1>
+      <div class="article-meta">
+        <span><i class="fas fa-user"></i> Pamela Dormeus</span>
+        <span><i class="fas fa-calendar"></i> October 2026</span>
+        <span><i class="fas fa-clock"></i> 4 min read</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ARTICLE BODY -->
+  <div class="article-wrap">
+    <div class="article-body">
+
+      <!-- INTRO HIGHLIGHT -->
+      <div class="article-highlight-box">
+        <p>Every year, millions of loving animals sit in shelters waiting for someone to take them to a place they can call home, yet people still turn to breeders and pet stores as a way of obtaining a pet. Choosing to adopt isn&#8217;t just about getting a pet; it&#8217;s also a life-saving decision that breaks the cycle of animal overpopulation and puppy mills.</p>
+      </div>
+
+      <!-- SECTION 1 -->
+      <div class="section-divider"><span class="section-label">What Are Puppy Mills?</span></div>
+      <h2 class="article-section-title">What are puppy mills?</h2>
+
+      <p>Puppy mills, also known as puppy farms, are commercial dog breeding facilities that prioritize the profit they make over the health of the animals. They often put dogs in cramped, dirty spaces with almost no room to move around. The crates are stacked on top of each other, to the point where waste would fall onto dogs below. Their food is sometimes moldy or filled with bugs, while their water contains algae in it. Injured or ill dogs get little to no veterinary treatment, which includes medication for infections and parasites. Furthermore, in most cases, female dogs are massively overbred during every heat cycle, with usually no recovery time, to the point where they can no longer reproduce. But the issue is not just the breeders, but also the people who put their money into this continuous harmful cycle which perpetuates the inhumane trade.</p>
+
+      <div class="article-img-wrap">
+        <div class="img-placeholder">
+          <i class="fas fa-paw"></i>
+          <span>Image coming soon</span>
+        </div>
+      </div>
+
+      <!-- SECTION 2 -->
+      <div class="section-divider"><span class="section-label">Adopting as an Alternative</span></div>
+      <h2 class="article-section-title">Adopting as an alternative</h2>
+
+      <p>If you&#8217;re planning on adopting a pet, the absolute best way to do it would be through a shelter for lots of reasons. When you adopt a pet from a shelter it creates a space for another animal who needs it. Sometimes shelters are so overcrowded that, unfortunately, one or more of the animals need to be put down, or euthanized. On a brighter note, pets that are adopted are usually neutered, spayed, and vaccinated. In addition, many shelters have pets of all different kinds, meaning everyone can leave with a pet that is just right for them. Shelters have a variety of different animals, so when you are adopting from one, the decision is completely yours.</p>
+
+      <div class="article-img-wrap">
+        <div class="img-placeholder">
+          <i class="fas fa-dog"></i>
+          <span>Image coming soon</span>
+        </div>
+      </div>
+
+      <!-- SECTION 3 -->
+      <div class="section-divider"><span class="section-label">Ways to Take Action</span></div>
+      <h2 class="article-section-title">Ways to take action</h2>
+
+      <p>An amazing way to take action is always to advocate and educate your friends and family about the harm that shopping for a pet can bring. Instead of shopping online for your perfect pet, I encourage you to visit a shelter or a rescue group. We know that adopting a pet is a big commitment and responsibility; if you&#8217;re a bit hesitant, a smaller step is to foster. Fostering is an amazing way to get familiar with the presence of a pet. Not only would it get you used to the responsibility and hard work that comes with raising a pet, but you would also be helping the shelter you fostered from a ton. When you foster a pet for some time, it frees up space for another animal to be taken in comfortably, and accommodated with what they need. Not only does this program help new animals coming into the shelter by freeing up space, but it also gives very young pets like kittens, also known as neonates, round-the-clock care. They need a lot of attention, and shelter staff cannot always provide this. A proposed solution to this issue was by allowing people to foster them for a couple of weeks until they can be adopted.</p>
+
+      <div class="article-img-wrap">
+        <div class="img-placeholder">
+          <i class="fas fa-cat"></i>
+          <span>Image coming soon</span>
+        </div>
+      </div>
+
+      <!-- SECTION 4 -->
+      <div class="section-divider"><span class="section-label">Conclusion</span></div>
+      <h2 class="article-section-title">Conclusion</h2>
+
+      <p>Choosing to adopt an animal is one of the most rewarding decisions you can make. By deciding to adopt, you aren&#8217;t just giving them a second chance that they deserve, but you are also actively advocating a lifesaving movement. In return, you get companion, a shelter gets space for a new animal, and you bring everyone one step closer to the end of the cruel puppy mills. If you feel like you are ready to make a change, consider stopping by a local shelter to meet rescues waiting for a home.</p>
+
+      <div class="article-img-wrap">
+        <div class="img-placeholder">
+          <i class="fas fa-dog"></i>
+          <span>Image coming soon</span>
+        </div>
+      </div>
+
+      <!-- CLOSING SECTION -->
+      <div class="section-divider"><span class="section-label">The Bottom Line</span></div>
+      <h2 class="article-section-title">Choosing adoption over profit to break the cycle</h2>
+
+      <div class="article-highlight-box">
+        <p>Puppy mills are known for focusing on the profit they are making over the well-being of the animals they keep in inhumane conditions. To stop the harmful cycle, future pet owners have to choose rescue shelters over commercial sellers. If you&#8217;re planning on getting a pet, the more ethical route is to adopt from a shelter.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-brand-name">UVFA</span>
+      </div>
+      <a class="footer-email" href="mailto:info@unitedvoicesforanimals.org">info@unitedvoicesforanimals.org</a>
+      <div class="footer-divider"></div>
+      <div class="footer-social">
+        <a href="https://www.tiktok.com/@unitedvoicesforanimals" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/unitedvoicesforanimals" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p class="footer-note">&copy; 2026 United Voices for Animals &middot; All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
